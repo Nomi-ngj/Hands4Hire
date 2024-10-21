@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mover_icon.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

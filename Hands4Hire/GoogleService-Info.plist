@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyC5sQfBUHR_se3kYc95JEoN3z4ccmXP6TA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>218746814951</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.NGiDeveloper.Hands4Hire</string>
+	<key>PROJECT_ID</key>
+	<string>hands4hire-14ce5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hands4hire-14ce5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:218746814951:ios:1e6a5695fd62105e33bd42</string>
+</dict>
+</plist>

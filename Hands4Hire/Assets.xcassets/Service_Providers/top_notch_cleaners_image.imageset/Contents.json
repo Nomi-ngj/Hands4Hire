@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "top_notch_cleaners_image.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

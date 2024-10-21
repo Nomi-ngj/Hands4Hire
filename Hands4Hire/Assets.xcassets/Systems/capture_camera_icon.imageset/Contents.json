@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "capture_camera_icon.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
