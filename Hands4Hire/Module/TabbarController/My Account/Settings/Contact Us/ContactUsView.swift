@@ -16,6 +16,7 @@ struct ContactUsView: View {
         }
         .customBackButton()
         .navigationTitle("Contact Us")
+        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }
 

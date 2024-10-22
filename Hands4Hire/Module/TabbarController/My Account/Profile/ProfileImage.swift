@@ -27,20 +27,6 @@ struct ProfileImage: View {
                 .scaledToFill()
                 .clipShape(Circle())
                 .frame(width: width, height: height)
-//                AsyncImage(url: url) { image in
-//                    image
-//                        .resizable()
-//                        .scaledToFill()
-//                        .clipShape(Circle())
-//                        .frame(width: width, height: height)
-//                } placeholder: {
-//                    Image(systemName: "person.fill")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .clipShape(Circle())
-//                        .frame(width: width, height: height)
-//                        .foregroundColor(.gray)
-//                }
             } else {
                 Image(systemName: "person.fill")
                     .resizable()

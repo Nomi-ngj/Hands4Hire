@@ -47,5 +47,6 @@ struct SettingsView: View {
             }
         }
         .preferredColorScheme(appManager.colorScheme)
+        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }

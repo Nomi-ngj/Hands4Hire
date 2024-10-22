@@ -26,7 +26,11 @@ class AppContainerManager: ObservableObject {
     @Published var shadowColor: Color = Theme.color.primaryColor
     
     var colorScheme: ColorScheme {
-        return isDarkMode ? .dark : .light
+        get {
+            return isDarkMode ? .dark : .light
+        }set {
+            isDarkMode = newValue == .dark
+        }
     }
     
     func updateColors(for colorScheme: ColorScheme) {

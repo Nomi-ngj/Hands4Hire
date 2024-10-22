@@ -25,8 +25,6 @@ struct CustomBackButtonModifier: ViewModifier {
             HStack {
                 Image("back")
                     .renderingMode(.template)
-//                    .scaledToFill()
-//                    .frame(width: 40, height: 60)
                     .scaledToFit()
                     .foregroundColor(colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor)
             }

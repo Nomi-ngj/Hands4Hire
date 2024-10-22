@@ -51,28 +51,21 @@ struct SplashScreenView: View {
         .background(Color.clear)
         .onChange(of: appManager.isDarkMode) { newColorScheme in
             // Update ViewModel when the color scheme changes
-            //viewModel.updateColors(for: appManager.colorScheme)
+//            viewModel.updateColors(for: appManager.colorScheme)
         }
         .onChange(of: userColorScheme) { newColorScheme in
             appManager.isDarkMode = newColorScheme == .dark
+            appManager.colorScheme = newColorScheme
         }
         .onAppear {
             // Duration of splash screen before transitioning to the next view
-            appManager.isDarkMode = userColorScheme == .dark
-
-//            #if DEBUG
-//                showSplash = false
-//            #else
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 // Navigate to the next view or perform your transition
                 withAnimation {
                     showSplash = false
                 }
             }
-            
-//            #endif
-            
         }
-        .preferredColorScheme(appManager.colorScheme)
+        .preferredColorScheme(userColorScheme)
     }
 }

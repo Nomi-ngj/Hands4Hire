@@ -113,15 +113,13 @@ struct TabBarController: View {
                     .frame(maxWidth: .infinity)
                 }
             }
-            .background(appManager.colorScheme == .dark ? Color.black: Color.white)
+            .background(appManager.isDarkMode ? Color.black: Color.white)
             .frame(height: 70)
             .opacity(tabOpacity)
             .onAppear {
                 withAnimation(.easeIn(duration: 0.5)) {
                     tabOpacity = 1.0
                 }
-                // Update ViewModel when the view appears
-                viewModel.updateColors(for: appManager.colorScheme)
             }
             .onChange(of: appManager.isDarkMode) { newColorScheme in
                 // Update ViewModel when the color scheme changes

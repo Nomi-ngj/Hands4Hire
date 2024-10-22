@@ -35,6 +35,7 @@ struct ChangePasswordView: View {
         }
         .customBackButton()
         .navigationTitle("Change Password")
+        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }
 

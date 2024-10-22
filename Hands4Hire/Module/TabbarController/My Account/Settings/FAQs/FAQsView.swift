@@ -17,6 +17,7 @@ struct FAQsView: View {
         }
         .customBackButton()
         .navigationTitle("FAQs")
+        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }
 

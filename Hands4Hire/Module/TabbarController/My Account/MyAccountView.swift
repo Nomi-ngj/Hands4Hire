@@ -92,47 +92,38 @@ struct MyAccountView: View {
             return AnyView(view)
         case .language:
             // Navigate to Language View
-            debugPrint("Language selected")
             return AnyView(underConstruction)
         case .notifications:
             // Navigate to Notifications View
-            debugPrint("Notifications selected")
             return AnyView(underConstruction)
         case .aboutFoodApp:
             // Navigate to About Food App View
-            debugPrint("About Food App selected")
             return AnyView(underConstruction)
         case .termsAndConditions:
             // Navigate to Terms and Conditions View
-            debugPrint("Terms and Conditions selected")
             return AnyView(underConstruction)
         case .privacyPolicy:
             // Navigate to Privacy Policy View
-            debugPrint("Privacy Policy selected")
             return AnyView(underConstruction)
         case .appTips:
             // Navigate to App Tips View
-            debugPrint("App Tips selected")
             return AnyView(underConstruction)
         case .shareThisApp:
             // Share the app
-            debugPrint("Share This App selected")
             return AnyView(underConstruction)
         case .delete:
             // Handle account deletion
-            debugPrint("Delete Account selected")
             return AnyView(underConstruction)
         case .logout:
             // Handle logout
-            debugPrint("Logout selected")
-            
             let view = LogoutConfirmationPopup(onConfirm:{ value in
                 // Handle logout logic
-                print("\(value) Logged out successfully!")
+                
                 if value == true {
+                    debugPrint("\(value) Logged out successfully!")
                     appManager.isUserLoggedIn = false
                 }else{
-                    debugPrint("dismiss view")
+                    debugPrint("dismiss LogoutConfirmationPopup view")
                 }
             })
             

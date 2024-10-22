@@ -124,16 +124,6 @@ struct LoginView: View {
             
             Spacer()
             
-//            // NavigationLink Tabbar Controller
-//            NavigationLink(
-//                destination: TabBarController(tabs: TabViewType.allCases.map { TabBarController.TabItem(viewType: $0) })
-//                    .environmentObject(appManager)
-//                    .navigationBarBackButtonHidden(true), // Hide back button
-//                isActive: $isTabBarActive,
-//                label: { EmptyView() }
-//            )
-            
-//            .environmentObject(colorSchemeManager)
             // NavigationLink SignUp
             NavigationLink(
                 destination: SignUpView(viewModel: .init(colorScheme: appManager.colorScheme, isTabBarActive: $isTabBarActive)).environmentObject(appManager),
@@ -151,7 +141,7 @@ struct LoginView: View {
         }
         .onAppear {
             // Update ViewModel when the view appears
-            viewModel.updateColors(for: appManager.colorScheme)
+            //viewModel.updateColors(for: appManager.colorScheme)
         }
         .background(Color.clear)
         .preferredColorScheme(appManager.colorScheme)
@@ -183,74 +173,3 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
-
-//struct LoginView: View {
-//    @State private var selectedUserType: UserType = .user
-//    @State private var email: String = ""
-//    @State private var password: String = ""
-//    
-//    var body: some View {
-//        VStack {
-//            // User Type Picker
-//            Picker("Login As", selection: $selectedUserType) {
-//                Text("User").tag(UserType.user)
-//                Text("Service Provider").tag(UserType.serviceProvider)
-//                Text("Agency").tag(UserType.agency)
-//            }
-//            .pickerStyle(SegmentedPickerStyle())
-//            .padding()
-//            
-//            // Email & Password Fields
-//            TextField("Email", text: $email)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
-//                .padding(.bottom)
-//            
-//            SecureField("Password", text: $password)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
-//                .padding(.bottom)
-//            
-//            // Login Button
-//            Button(action: handleLogin) {
-//                Text("Login")
-//                    .padding()
-//                    .background(Color.blue)
-//                    .foregroundColor(.white)
-//                    .cornerRadius(10)
-//            }
-//        }
-//        .padding()
-//    }
-//    
-//    func handleLogin() {
-//        switch selectedUserType {
-//        case .user:
-//            // Handle user login
-//            print("Logging in as User")
-//        case .serviceProvider:
-//            // Handle service provider login
-//            print("Logging in as Service Provider")
-//        case .agency:
-//            // Handle agency login
-//            print("Logging in as Agency")
-//        }
-//    }
-//    
-////    func navigateToDashboard(userType: UserType) {
-////        switch userType {
-////        case .user:
-////            // Navigate to User dashboard
-////            // e.g. `UserDashboardView()`
-////        case .serviceProvider:
-////            // Navigate to Service Provider dashboard
-////            // e.g. `ServiceProviderDashboardView()`
-////        case .agency:
-////            // Navigate to Agency dashboard
-////            // e.g. `AgencyDashboardView()`
-////        }
-////    }
-//
-//}
-//
-//#Preview {
-//    LoginView()
-//}

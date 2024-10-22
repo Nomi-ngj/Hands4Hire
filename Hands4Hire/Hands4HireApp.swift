@@ -48,13 +48,6 @@ struct Hands4HireApp: App {
                         SplashScreenView(showSplash: $showSplash)
                             .environmentObject(appManager)
                     } else {
-//                        #if DEBUG
-//                        TabBarController(tabs: TabViewType.allCases.map { viewType in
-//                            TabBarController.TabItem(viewType: viewType)
-//                        })
-//                        .environmentObject(appManager)
-////                        
-//                        #else
                         if appManager.isUserLoggedIn {
                             TabBarController(tabs: TabViewType.allCases.map { viewType in
                                 TabBarController.TabItem(viewType: viewType)
@@ -64,7 +57,6 @@ struct Hands4HireApp: App {
                             LoginView()
                                 .environmentObject(appManager)
                         }
-//                        #endif
                     }
                 }
             }

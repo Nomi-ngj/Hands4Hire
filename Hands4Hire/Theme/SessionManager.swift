@@ -43,6 +43,16 @@ class SessionManager:NSObject{
         }
     }
     
+    var isDarkModeEnabled:Bool{
+        set{
+            userDefault.set(newValue, forKey: "isDarkModeEnabled")
+            userDefault.synchronize()
+        }
+        get{
+            return userDefault.bool(forKey: "isDarkModeEnabled")
+        }
+    }
+    
     var isSecurityEnabled:Bool{
         set{
             userDefault.set(newValue, forKey: "SecurityEnabled")
