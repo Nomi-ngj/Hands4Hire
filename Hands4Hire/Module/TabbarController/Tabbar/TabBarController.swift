@@ -65,7 +65,7 @@ struct TabBarController: View {
             MyAccountView()
                 .toolbar {
                     ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                        Text(Theme.localized.myAccount)
+                        Text(localized: Theme.localized.myAccount.localized())
                             .font(Theme.fonts.headline) // Customize font, size, and weight
                     }
                 }
@@ -104,7 +104,7 @@ struct TabBarController: View {
                                 .frame(width: 25, height: 25, alignment: .center)
                             
                             if tab.viewType == selectedTab{
-                                Text(tab.viewType.title)
+                                Text(localized: tab.viewType.title)
                                     .font(viewModel.fontLabel)
                             }
                         }

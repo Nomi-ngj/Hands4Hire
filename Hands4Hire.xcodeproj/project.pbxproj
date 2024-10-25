@@ -22,6 +22,12 @@
 		8C7BC9B82CC4398E00B951AF /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9B72CC4398E00B951AF /* ServiceDetailView.swift */; };
 		8C7BC9BD2CC43DD200B951AF /* ReviewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9BC2CC43DD200B951AF /* ReviewsListView.swift */; };
 		8C7BC9BF2CC83A4300B951AF /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9BE2CC83A4300B951AF /* TextFieldModifier.swift */; };
+		8C7BC9C32CCC100C00B951AF /* LanguageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9C22CCC100C00B951AF /* LanguageSelectionView.swift */; };
+		8C7BC9C52CCC108800B951AF /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9C42CCC108800B951AF /* LocalizationManager.swift */; };
+		8C7BC9C72CCC10AE00B951AF /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9C62CCC10AE00B951AF /* AppLanguage.swift */; };
+		8C7BC9CA2CCC113200B951AF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8C7BC9C92CCC113200B951AF /* Localizable.xcstrings */; };
+		8C7BC9CC2CCC1A3600B951AF /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9CB2CCC1A3600B951AF /* Text+Extension.swift */; };
+		8C7BC9CE2CCC371C00B951AF /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9CD2CCC371C00B951AF /* String+Localizable.swift */; };
 		8CB726AF2C8D86D200E107EF /* Hands4HireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB726AE2C8D86D200E107EF /* Hands4HireApp.swift */; };
 		8CB726B32C8D86D400E107EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB726B22C8D86D400E107EF /* Assets.xcassets */; };
 		8CB726B62C8D86D400E107EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB726B52C8D86D400E107EF /* Preview Assets.xcassets */; };
@@ -97,6 +103,12 @@
 		8C7BC9B72CC4398E00B951AF /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
 		8C7BC9BC2CC43DD200B951AF /* ReviewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListView.swift; sourceTree = "<group>"; };
 		8C7BC9BE2CC83A4300B951AF /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		8C7BC9C22CCC100C00B951AF /* LanguageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionView.swift; sourceTree = "<group>"; };
+		8C7BC9C42CCC108800B951AF /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		8C7BC9C62CCC10AE00B951AF /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		8C7BC9C92CCC113200B951AF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		8C7BC9CB2CCC1A3600B951AF /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
+		8C7BC9CD2CCC371C00B951AF /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		8CB726AB2C8D86D200E107EF /* Hands4Hire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hands4Hire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB726AE2C8D86D200E107EF /* Hands4HireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hands4HireApp.swift; sourceTree = "<group>"; };
 		8CB726B22C8D86D400E107EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +237,18 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		8C7BC9C12CCC0FF000B951AF /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				8C7BC9C42CCC108800B951AF /* LocalizationManager.swift */,
+				8C7BC9CD2CCC371C00B951AF /* String+Localizable.swift */,
+				8C7BC9CB2CCC1A3600B951AF /* Text+Extension.swift */,
+				8C7BC9C22CCC100C00B951AF /* LanguageSelectionView.swift */,
+				8C7BC9C62CCC10AE00B951AF /* AppLanguage.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 		8CB726A22C8D86D200E107EF = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +268,7 @@
 		8CB726AD2C8D86D200E107EF /* Hands4Hire */ = {
 			isa = PBXGroup;
 			children = (
+				8C7BC9C92CCC113200B951AF /* Localizable.xcstrings */,
 				8CB727812C93530300E107EF /* Firestore */,
 				8CB727782C934D4C00E107EF /* GoogleService-Info.plist */,
 				8CB727772C934B0400E107EF /* Module */,
@@ -386,6 +411,7 @@
 		8CB727472C93480D00E107EF /* My Account */ = {
 			isa = PBXGroup;
 			children = (
+				8C7BC9C12CCC0FF000B951AF /* Language */,
 				8CB727382C93480D00E107EF /* Profile */,
 				8CB727412C93480D00E107EF /* Settings */,
 				8CB727432C93480D00E107EF /* UnderConstruction */,
@@ -509,6 +535,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				fr,
+				es,
 			);
 			mainGroup = 8CB726A22C8D86D200E107EF;
 			packageReferences = (
@@ -536,6 +565,7 @@
 				8CB7275F2C93480D00E107EF /* Poppins-Regular.ttf in Resources */,
 				8CB726B62C8D86D400E107EF /* Preview Assets.xcassets in Resources */,
 				8CB7275E2C93480D00E107EF /* Poppins-Medium.ttf in Resources */,
+				8C7BC9CA2CCC113200B951AF /* Localizable.xcstrings in Resources */,
 				8CB727602C93480D00E107EF /* Poppins-SemiBold.ttf in Resources */,
 				8CB726B32C8D86D400E107EF /* Assets.xcassets in Resources */,
 				8CB7275C2C93480D00E107EF /* Poppins-Bold.ttf in Resources */,
@@ -560,6 +590,7 @@
 				8CB727532C93480D00E107EF /* LocalizedConstants.swift in Sources */,
 				8CB727542C93480D00E107EF /* SessionManager.swift in Sources */,
 				8CB727512C93480D00E107EF /* AppImages.swift in Sources */,
+				8C7BC9CE2CCC371C00B951AF /* String+Localizable.swift in Sources */,
 				8C7BC9802CBF0C7900B951AF /* SectionHeaderView.swift in Sources */,
 				8CB7275A2C93480D00E107EF /* SignUpViewModel.swift in Sources */,
 				8CB727832C93532B00E107EF /* UserFirebase.swift in Sources */,
@@ -571,11 +602,14 @@
 				8CB727502C93480D00E107EF /* AppColor.swift in Sources */,
 				8CB727562C93480D00E107EF /* BorderedButtonStyle.swift in Sources */,
 				8CB727852C93536100E107EF /* Review.swift in Sources */,
+				8C7BC9C52CCC108800B951AF /* LocalizationManager.swift in Sources */,
 				8CB7277B2C934E2B00E107EF /* FirestoreSeeder.swift in Sources */,
 				8CB726C72C93311A00E107EF /* FirestoreManager.swift in Sources */,
 				8CB727742C93480D00E107EF /* TabViewType.swift in Sources */,
 				8CB727672C93480D00E107EF /* ChangePasswordView.swift in Sources */,
+				8C7BC9C72CCC10AE00B951AF /* AppLanguage.swift in Sources */,
 				8C7BC97E2CBF0C6C00B951AF /* ServiceItemView.swift in Sources */,
+				8C7BC9C32CCC100C00B951AF /* LanguageSelectionView.swift in Sources */,
 				8CB727632C93480D00E107EF /* SplashScreenView.swift in Sources */,
 				8CB7276B2C93480D00E107EF /* SettingsViewModel.swift in Sources */,
 				8CB7278D2C93546600E107EF /* ServicesListView.swift in Sources */,
@@ -602,6 +636,7 @@
 				8C7BC9B22CC4388400B951AF /* ServiceProviderDetailView.swift in Sources */,
 				8CB727692C93480D00E107EF /* FAQsView.swift in Sources */,
 				8C7BC9742CBF0C0100B951AF /* HomeSection.swift in Sources */,
+				8C7BC9CC2CCC1A3600B951AF /* Text+Extension.swift in Sources */,
 				8C7BC9782CBF0C4100B951AF /* SearchBarView.swift in Sources */,
 				8CB726D22C93470F00E107EF /* LoginViewModel.swift in Sources */,
 			);
@@ -669,6 +704,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -725,6 +761,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

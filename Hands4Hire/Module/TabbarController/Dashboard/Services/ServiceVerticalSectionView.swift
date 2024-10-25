@@ -19,6 +19,7 @@ struct ServiceVerticalSectionView: View {
     
     @EnvironmentObject var appManager: AppContainerManager
     @Environment(\.colorScheme) private var userColorScheme
+    
     var body: some View {
         VStack(alignment: .leading) {
             

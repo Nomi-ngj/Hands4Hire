@@ -29,12 +29,12 @@ struct ServiceProviderDetailView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     
                     HStack {
-                        (Text("Rating: ")
+                        (Text(localized: "Rating: ")
                             .font(Theme.fonts.footnoteMedium) +
                          Text("\(provider.rating, specifier: "%.1f")")
                             .font(Theme.fonts.footnote))
                         NavigationLink(destination: ReviewListView(reviews: provider.reviews).environmentObject(appManager).navigationBarBackButtonHidden(true).customBackButton()) {
-                            Text("(\(provider.reviews.count) reviews)")
+                            Text(localized: "(\(provider.reviews.count) reviews)")
                                 .foregroundColor(Theme.color.navyBlueTextColor)
                                 .font(Theme.fonts.footnoteMedium)
                         }
@@ -42,13 +42,13 @@ struct ServiceProviderDetailView: View {
                     
                     Text("Hourly Rate: $\(provider.hourlyRate, specifier: "%.2f")")
                         .font(Theme.fonts.footnote)
-                    Text("Availability: \(provider.isAvailable ? "Available" : "Not Available")")
+                    Text(localized:"Availability: \(provider.isAvailable ? "Available" : "Not Available")")
                         .font(Theme.fonts.footnote)
                         .foregroundColor(provider.isAvailable ? Theme.color.primaryColor : Theme.color.errorColor)
                 }
                 .padding(.horizontal, 8)
                 
-                Text("Services Offered:")
+                Text(localized: "Services Offered:")
                     .font(Theme.fonts.headline)
             }
             .padding()
@@ -67,7 +67,7 @@ struct ServiceProviderDetailView: View {
         .background(Color.gray.opacity(0.15))
         .toolbar {
             ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                Text(provider.name)
+                Text(localized: provider.name)
                     .font(Theme.fonts.headline) // Customize font, size, and weight
             }
         }

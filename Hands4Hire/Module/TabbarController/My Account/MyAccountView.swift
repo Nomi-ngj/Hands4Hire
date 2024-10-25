@@ -24,7 +24,7 @@ struct MyAccountView: View {
                     selection: $selectedSection
                 ) {
                     HStack {
-                        Text(viewModel.sectionTitle(for: section))
+                        Text(localized: viewModel.sectionTitle(for: section))
                             .font(Theme.fonts.caption1)
                             .foregroundColor(viewModel.primaryColor) // This should reflect the updated color
                             
@@ -92,7 +92,16 @@ struct MyAccountView: View {
             return AnyView(view)
         case .language:
             // Navigate to Language View
-            return AnyView(underConstruction)
+            return AnyView(LanguageSelectionView()
+                .customBackButton()
+                .toolbar {
+                    ToolbarItem(placement: .principal) { // Custom font style for the navigation title
+                        Text(title)
+                            .font(Theme.fonts.headline) // Customize font, size, and weight
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
+                .environmentObject(appManager))
         case .notifications:
             // Navigate to Notifications View
             return AnyView(underConstruction)

@@ -38,7 +38,7 @@ struct SectionHeaderView: View {
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(localized: title.localized())
                 .font(Theme.fonts.headline)
                 .foregroundColor(viewModel.primaryColor)
             
@@ -47,15 +47,16 @@ struct SectionHeaderView: View {
                 Button(action: {
                     self.onSeeAllTapped?()
                 }) {
-                    Text("See all")
-                        .font(Theme.fonts.caption4)
-                        .foregroundColor(viewModel.shadowColor)
+                    Image(systemName: "arrowshape.forward.circle.fill")
+                        .foregroundColor(appManager.grayBackgroundColor)
+//                    Text("See all".localized())
+//                        .font(Theme.fonts.caption4)
+//                        .foregroundColor(viewModel.shadowColor)
                 }
             }
             
         }
         .padding(.horizontal)
-//        .background(.clear)
         .onChange(of: appManager.isDarkMode) { newColorScheme in
             // Update ViewModel when the color scheme changes
             viewModel.updateColors(for: appManager.colorScheme)

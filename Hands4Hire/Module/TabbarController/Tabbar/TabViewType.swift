@@ -17,13 +17,13 @@ enum TabViewType: CaseIterable {
     var title:String {
         switch self {
         case .home:
-            return Theme.localized.home
+            return Theme.localized.home.localized()
         case .orders:
-            return Theme.localized.myOrders
+            return Theme.localized.myOrders.localized()
         case .favorites:
-            return Theme.localized.myFavorites
+            return Theme.localized.myFavorites.localized()
         case .profile:
-            return Theme.localized.myAccount
+            return Theme.localized.myAccount.localized()
         }
     }
     

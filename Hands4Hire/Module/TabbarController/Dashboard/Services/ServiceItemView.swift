@@ -47,7 +47,7 @@ struct ServiceItemView: View {
                     .clipped()                // Clip the image to the bounds of the corner radius
                     .elevationLevel1()
                 
-                Text(item.title)
+                Text(localized: item.title.localized())
                     .font(Theme.fonts.caption2)
                     .foregroundColor(viewModel.primaryColor)
                     .multilineTextAlignment(.center) // Align text to center

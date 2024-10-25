@@ -28,18 +28,18 @@ struct ServiceDetailView: View {
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(12)
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Description: ").font(Theme.fonts.caption1Med)
-                    Text(item.description).font(Theme.fonts.caption2)
-                    Text("Overview: ").font(Theme.fonts.caption1Med)
-                    Text(item.overview).font(Theme.fonts.caption2)
-                    Text("Expected Duration: ").font(Theme.fonts.caption1Med)
-                    Text(item.expectedDuration).font(Theme.fonts.caption2)
-                    Text("Cost Range: ").font(Theme.fonts.caption1Med)
-                    Text(item.costRange).font(Theme.fonts.caption2)
+                    Text(localized: "Description: ").font(Theme.fonts.caption1Med)
+                    Text(localized: item.description.localized()).font(Theme.fonts.caption2)
+                    Text(localized: "Overview: ").font(Theme.fonts.caption1Med)
+                    Text(localized: item.overview.localized()).font(Theme.fonts.caption2)
+                    Text(localized: "Expected Duration: ").font(Theme.fonts.caption1Med)
+                    Text(localized: item.expectedDuration.localized()).font(Theme.fonts.caption2)
+                    Text(localized: "Cost Range: ").font(Theme.fonts.caption1Med)
+                    Text(localized: item.costRange.localized()).font(Theme.fonts.caption2)
                 }
                 .padding(.horizontal, 8)
                 
-                Text("Service Providers")
+                Text(localized: "Service Providers")
                     .font(Theme.fonts.headline)
                 LazyVGrid(columns: columns, spacing: 8) {
                     ForEach(serviceProviders) { provider in
@@ -53,10 +53,9 @@ struct ServiceDetailView: View {
         }
         .padding(.horizontal)
         .background(Color.gray.opacity(0.1))
-//        .navigationTitle(item.title) // Set the navigation title
         .toolbar {
             ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                Text(item.title)
+                Text(localized: item.title.localized())
                     .font(Theme.fonts.headline) // Customize font, size, and weight
             }
         }

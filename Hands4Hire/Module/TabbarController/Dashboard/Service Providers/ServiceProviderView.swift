@@ -17,11 +17,9 @@ struct ServiceProviderView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 100)
-//                    .cornerRadius(10)
                     .clipped()
-//                    .elevationLevel1()
 
-                Text(provider.name) // Assuming ServiceProvider has a name property
+                Text(localized: provider.name) // Assuming ServiceProvider has a name property
                     .font(Theme.fonts.caption3)
                     .foregroundColor(appManager.textPrimaryColor)
                     .multilineTextAlignment(.center)

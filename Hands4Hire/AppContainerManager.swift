@@ -44,6 +44,6 @@ class AppContainerManager: ObservableObject {
         self.primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
         self.shadowColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.borderTintInputColor
         self.whiteBackgroundColor = colorScheme == .dark ? Theme.color.appBackgroundColor : Theme.color.whiteColor
-        self.grayBackgroundColor = colorScheme == .dark ? Theme.color.disabledColor : Theme.color.whiteColor
+        self.grayBackgroundColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.disabledColor
     }
 }

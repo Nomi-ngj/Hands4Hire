@@ -15,34 +15,34 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Appearance")) {
+            Section(header: Text(localized: "Appearance")) {
                 Toggle(isOn: $appManager.isDarkMode) {
-                    Text("Dark Mode")
+                    Text(localized: "Dark Mode")
                 }
             }
             
-            Section(header: Text("General")) {
+            Section(header: Text(localized: "General")) {
                 Toggle(isOn: $viewModel.notificationsEnabled) {
-                    Text("Enable Notifications")
+                    Text(localized: "Enable Notifications")
                 }
                 
                 Toggle(isOn: $viewModel.faceIDEnabled) {
-                    Text("Enable Face ID / Touch ID")
+                    Text(localized: "Enable Face ID / Touch ID")
                 }
                 let changePasswordView = ChangePasswordView()
                     .environmentObject(appManager)
                 NavigationLink(destination: changePasswordView) {
-                    Text("Change Password")
+                    Text(localized: "Change Password")
                 }
             }
             
-            Section(header: Text("Support")) {
+            Section(header: Text(localized: "Support")) {
                 NavigationLink(destination: ContactUsView()) {
-                    Text("Contact Us")
+                    Text(localized: "Contact Us")
                 }
                 
                 NavigationLink(destination: FAQsView()) {
-                    Text("FAQs")
+                    Text(localized: "FAQs")
                 }
             }
         }

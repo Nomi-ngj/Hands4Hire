@@ -35,7 +35,7 @@ struct LoginView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100) // Adjust size as needed
             
-            Text(Theme.localized.welcome)
+            Text(localized: Theme.localized.welcome.localized())
                 .font(Theme.fonts.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(viewModel.primaryColor) // Adjust color as needed

@@ -62,6 +62,7 @@ struct Hands4HireApp: App {
             }
             .onAppear{
                 appManager.isUserLoggedIn = Theme.sessionManager.userProfile != nil
+                _ = LocalizationManager.shared
 //                 FirestoreSeeder.init().seedData()
             }
         }
