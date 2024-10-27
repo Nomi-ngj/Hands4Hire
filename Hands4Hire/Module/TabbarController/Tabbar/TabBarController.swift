@@ -9,21 +9,21 @@ import SwiftUI
 
 class TabBarViewModel: ObservableObject{
     
-    @Published var selectionColor:Color = Theme.color.primaryColor
+//    @Published var selectionColor:Color = Theme.shared.color.primaryColor
     @Binding var showTopBar:Bool
-    @Published var unSelectionColor:Color = Theme.color.disabledColor
+//    @Published var unSelectionColor:Color = Theme.shared.color.disabledColor
     let fontLabel:Font = Theme.fonts.caption4
     
-    init(colorScheme: ColorScheme, showTopBar:Binding<Bool>) {
-        self.selectionColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
+    init(showTopBar:Binding<Bool>) {
+//        self.selectionColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
         _showTopBar = showTopBar
     }
     
-    func updateColors(for colorScheme: ColorScheme) {
-        // Update colors based on the new color scheme
-        self.unSelectionColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.disabledColor
-        self.selectionColor = colorScheme == .dark ? Theme.color.secondaryColor : Theme.color.primaryColor
-    }
+//    func updateColors(for colorScheme: ColorScheme) {
+//        // Update colors based on the new color scheme
+//        self.unSelectionColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.disabledColor
+//        self.selectionColor = colorScheme == .dark ? Theme.color.secondaryColor : Theme.color.primaryColor
+//    }
     
 }
 
@@ -32,11 +32,10 @@ struct TabBarController: View {
     struct TabItem {
         var viewType: TabViewType
     }
-    @ObservedObject var viewModel:TabBarViewModel = .init(colorScheme: .dark, showTopBar: .constant(false))
+    @ObservedObject var viewModel:TabBarViewModel = .init(showTopBar: .constant(false))
     @State private var selectedTab: TabViewType
     @State private var tabOpacity = 0.0
     @EnvironmentObject var appManager: AppContainerManager
-    @Environment(\.colorScheme) private var userColorScheme
     
     let tabs: [TabItem]
     init(tabs: [TabItem]) {
@@ -46,30 +45,21 @@ struct TabBarController: View {
     
     @ViewBuilder
     func tabView(for viewType: TabViewType) -> some View {
-
         switch viewType {
         case .home:
             DashboardView()
                 .toolbar {
-                    ToolbarItem(placement: .principal) { // Custom font style for the navigation title
+                    ToolbarItem(placement: .principal) {
                         Text(Theme.localized.appName)
-                            .font(Theme.fonts.headline) // Customize font, size, and weight
+                            .font(Theme.fonts.headline)
                     }
                 }
-                .environmentObject(appManager)
         case .orders:
             ServicesListView()
         case .favorites:
             UsersListView()
         case .profile:
             MyAccountView()
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                        Text(localized: Theme.localized.myAccount.localized())
-                            .font(Theme.fonts.headline) // Customize font, size, and weight
-                    }
-                }
-                .environmentObject(appManager)
         }
     }
     
@@ -104,11 +94,12 @@ struct TabBarController: View {
                                 .frame(width: 25, height: 25, alignment: .center)
                             
                             if tab.viewType == selectedTab{
+                                
                                 Text(localized: tab.viewType.title)
                                     .font(viewModel.fontLabel)
                             }
                         }
-                        .foregroundColor((tab.viewType == selectedTab ? viewModel.selectionColor : viewModel.unSelectionColor))
+                        .foregroundColor((tab.viewType == selectedTab ? appManager.theme.color.primaryColor : appManager.theme.color.disabledColor))
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -120,15 +111,26 @@ struct TabBarController: View {
                 withAnimation(.easeIn(duration: 0.5)) {
                     tabOpacity = 1.0
                 }
+                // Observe the language change notification
+                NotificationCenter.default.addObserver(forName: .languageDidChange, object: nil, queue: .main) { _ in
+                    // Update your state or perform necessary actions
+                    DispatchQueue.main.async {
+                        self.selectedTab = self.selectedTab // Implement this function to get the current language
+                    }
+                }
             }
-            .onChange(of: appManager.isDarkMode) { newColorScheme in
-                // Update ViewModel when the color scheme changes
-                viewModel.updateColors(for: appManager.colorScheme)
+            .onDisappear {
+                // Remove the observer to avoid memory leaks
+                NotificationCenter.default.removeObserver(self, name: .languageDidChange, object: nil)
             }
-            .onChange(of: userColorScheme) { newColorScheme in
-                appManager.isDarkMode = newColorScheme == .dark
-            }
-            .preferredColorScheme(appManager.colorScheme)
+//            .onChange(of: appManager.isDarkMode) { newColorScheme in
+//                // Update ViewModel when the color scheme changes
+//                viewModel.updateColors(for: appManager.colorScheme)
+//            }
+//            .onChange(of: userColorScheme) { newColorScheme in
+//                appManager.isDarkMode = newColorScheme == .dark
+//            }
+//            .preferredColorScheme(appManager.colorScheme)
             
         }
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct ServiceProviderServiceItemView: View {
     
     @EnvironmentObject var appManager: AppContainerManager
-    @ObservedObject var viewModel: ServiceItemViewModel
+//    @ObservedObject var viewModel: ServiceItemViewModel
     @Environment(\.colorScheme) private var userColorScheme
     var item: ServiceItem
     let itemWidth = UIScreen.main.bounds.width * 0.215
@@ -28,7 +28,7 @@ struct ServiceProviderServiceItemView: View {
             
             Text(localized: item.title)
                 .font(Theme.fonts.caption2)
-                .foregroundColor(appManager.primaryColor)
+                .foregroundColor(appManager.theme.color.primaryColor)
                 .multilineTextAlignment(.center) // Align text to center
                 .lineLimit(nil)                  // Allow unlimited lines
                 .frame(maxWidth: itemWidth)
@@ -39,17 +39,7 @@ struct ServiceProviderServiceItemView: View {
         }
         .frame(width: itemWidth)
         .padding(.horizontal)
-        .background(viewModel.backgroundColor)
+        .background(appManager.theme.color.whiteColor)
         .cornerRadius(10)
-        .onChange(of: appManager.isDarkMode) { newColorScheme in
-            viewModel.updateColors(for: appManager.colorScheme)
-        }
-        .onChange(of: userColorScheme) { newColorScheme in
-            appManager.isDarkMode = newColorScheme == .dark
-        }
-        .onAppear {
-            viewModel.updateColors(for: appManager.colorScheme)
-        }
-        .preferredColorScheme(appManager.colorScheme)
     }
 }

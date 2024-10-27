@@ -7,17 +7,22 @@
 
 import Foundation
 
-struct Theme {
+class Theme : ObservableObject {
+    
+    static let shared = Theme()
     
     /// The font configurations.
     static let fonts = Fonts()
-    
+        
     /// The localized constants.
     static let localized = LocalizedConstants()
-//
-//    /// The color theme.
-    static let color = AppColor(rawValue: AppColor.current.rawValue)!
-//
+
+    @Published var color:AppColor = AppColor.current
+    
+    func setTheme(_ color: AppColor) {
+        self.color = color
+        self.color.apply()
+    }
     /// The localized constants.
     static let images = AppImages()
 //    /// The alert controller for displaying alerts.

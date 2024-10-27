@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @State private var isNavigatingToServiceSection = false
-    @State private var selectedServiceType: HomeSection = .allServices
-    @State var serviceData: [ServiceItem] = []
     @EnvironmentObject var appManager: AppContainerManager
-    @Environment(\.colorScheme) private var userColorScheme
+    
     var body: some View {
         ScrollView {
             SearchBarView()
@@ -22,38 +19,17 @@ struct DashboardView: View {
                 ForEach(HomeSection.allCases, id: \.self) { type in
                     
                     if type == .allServices {
-                        ServiceVerticalSectionView(section: type, items: allServices, onSeeAllTapped: {
-                            // self.isNavigatingToServiceSection = true
-                        }).environmentObject(appManager)
+                        ServiceVerticalSectionView(title: type.title, items: allServices, showSearchBar: false)
                     }else{
                         
                         let services = allServices.filter { $0.type == type }
-                        ServiceSectionView(title: type.title, items: services, onSeeAllTapped: {
-                            self.isNavigatingToServiceSection = true
-                            self.serviceData = services
-                            self.selectedServiceType = type
-                        }, viewModel: .init(colorScheme: userColorScheme)).environmentObject(appManager)
+                        ServiceSectionView(title: type.title, items: services)
                     }
                 }
             }
         }
         .background(Color.gray.opacity(0.15))
-        .onChange(of: appManager.isDarkMode) { newColorScheme in
-            // Update ViewModel when the color scheme changes
-            //viewModel.updateColors(for: appManager.colorScheme)
-        }
-        .onChange(of: userColorScheme) { newColorScheme in
-            appManager.isDarkMode = newColorScheme == .dark
-        }
-        .preferredColorScheme(appManager.colorScheme)
-        
         .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
-        // NavigationLink to "All Services" view
-        
-        NavigationLink(destination: ServiceVerticalSectionView(section: self.selectedServiceType, items: self.serviceData).environmentObject(appManager).navigationTitle(self.selectedServiceType.title)
-            .customBackButton(), isActive: $isNavigatingToServiceSection) {
-                EmptyView()
-            }
     }
 }
 

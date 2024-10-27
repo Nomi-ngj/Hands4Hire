@@ -41,7 +41,18 @@ enum AppColor:Int{
         NotificationCenter.default.post(name: .themeChanged, object: nil)
     }
     
-    var primaryColor: Color { return UIColor(resource: .appPrimary).toColor }
+    var primaryColor: Color {
+        switch self {
+        case .default:
+            return UIColor(resource: .appPrimary).toColor
+        case .darkMode:
+            return UIColor(resource: .appSecondary).toColor
+        case .blue:
+            return UIColor(resource: .appPrimary).toColor
+        case .green:
+            return UIColor(resource: .appPrimary).toColor
+        }
+    }
     var secondaryColor: Color { return UIColor(resource: .appSecondary).toColor }
     var tealColor: Color { return UIColor(resource: .appTeal).toColor }
     var textPrimaryColor: Color { return UIColor(resource: .appTextPrimary).toColor }
@@ -50,8 +61,32 @@ enum AppColor:Int{
     var textTertiaryColor: Color { return UIColor(resource: .appTextTertiary).toColor }
     var placeholderTextColor: Color { return UIColor(resource: .appPlaceholderText).toColor }
     var navyBlueTextColor: Color { return UIColor(resource: .appNavyBlue).toColor }
-    var blackColor: Color { return UIColor(resource: .appBlack).toColor }
-    var whiteColor: Color { return UIColor(resource: .appWhite).toColor }
+    var blackColor: Color {
+        switch self {
+        case .default:
+            return UIColor(resource: .appBlack).toColor
+        case .darkMode:
+            return UIColor(resource: .appWhite).toColor
+        case .blue:
+            return UIColor(resource: .appBlack).toColor
+        case .green:
+            return UIColor(resource: .appBlack).toColor
+        }
+        
+    }
+    var whiteColor: Color {
+        switch self {
+        case .default:
+            return UIColor(resource: .appWhite).toColor
+        case .darkMode:
+            return UIColor(resource: .appBlack).toColor
+        case .blue:
+            return UIColor(resource: .appWhite).toColor
+        case .green:
+            return UIColor(resource: .appWhite).toColor
+        }
+        
+    }
     var placeholderBgColor: Color { return UIColor(resource: .appPlaceholderBg).toColor }
     var borderTintInputColor: Color { return UIColor(resource: .appBorderTintInput).toColor }
     var disabledColor: Color { return UIColor(resource: .appDisabled).toColor }
@@ -60,6 +95,13 @@ enum AppColor:Int{
     var infoColor: Color { return UIColor(resource: .appInfo).toColor }
     var errorColor: Color { return UIColor(resource: .appError).toColor }
     var cleared: Color { return UIColor.clear.toColor }
+    
+    
+    
+    var textBlackColor: Color { return UIColor(resource: .appSecondary).toColor }
+    var whiteBackgroundColor: Color { return UIColor(resource: .appSecondary).toColor }
+    var grayBackgroundColor: Color { return UIColor(resource: .appSecondary).toColor }
+    var shadowColor: Color { return UIColor(resource: .appSecondary).toColor }
     
     func hexStringToColor (_ hex:String) -> Color{
         return Color.init(hex: hex)

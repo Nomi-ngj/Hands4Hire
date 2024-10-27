@@ -8,7 +8,7 @@
 import FirebaseFirestore
 import Foundation
 
-struct Review: Identifiable, Codable {
+struct Review: Identifiable, Codable, Hashable {
     @DocumentID var id: String?
     var reviewerName: String? // Reference to the related job
     var jobId: String // Reference to the related job

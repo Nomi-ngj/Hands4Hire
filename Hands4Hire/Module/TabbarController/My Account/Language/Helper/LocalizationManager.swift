@@ -18,6 +18,8 @@ class LocalizationManager: ObservableObject {
         didSet {
             UserDefaults.standard.set(selectedLanguage.rawValue, forKey: APPLE_LANGUAGE_KEY)
             Bundle.setLanguage(selectedLanguage.rawValue)
+            NotificationCenter.default.post(name: .languageDidChange, object: nil)
+
         }
     }
     
@@ -30,21 +32,7 @@ class LocalizationManager: ObservableObject {
     }
 }
 
-extension Bundle {
-    private static var bundle: Bundle?
-
-    static func setLanguage(_ language: String) {
-        // Use the language code to find the correct .lproj directory
-        guard let path = Bundle.main.path(forResource: language, ofType: "lproj") else {
-            return
-        }
-        DispatchQueue.main.async {
-            self.bundle = Bundle(path: path)
-        }
-    }
-
-    static func localizedString(forKey key: String, value: String?, table: String? = nil) -> String {
-        // Attempt to fetch the localized string from the custom bundle
-        return bundle?.localizedString(forKey: key, value: value, table: table) ?? key
-    }
+extension Notification.Name {
+    static let languageDidChange = Notification.Name("languageDidChange")
 }
+

@@ -9,12 +9,11 @@ import SwiftUI
 
 struct UnderConstructionView: View {
     var message: String = "This feature is under construction"
-    @Environment(\.colorScheme) private var colorScheme
-
+    @EnvironmentObject var appManager: AppContainerManager
     var body: some View {
         ZStack {
             // Background color
-            (colorScheme == .dark ? Theme.color.blackColor:Theme.color.whiteColor)
+            (appManager.theme.color.whiteColor)
                 .edgesIgnoringSafeArea(.all)
             
             // Content
@@ -29,12 +28,12 @@ struct UnderConstructionView: View {
                 // Message
                 Text(message)
                     .font(Theme.fonts.title2)
-                    .foregroundColor((colorScheme == .light ? Theme.color.blackColor:Theme.color.whiteColor))
+                    .foregroundColor(appManager.theme.color.blackColor)
                     .multilineTextAlignment(.center)
                     .padding()
             }
             .padding()
-            .background(Color.gray.opacity(0.2))
+            .background(appManager.theme.color.whiteColor)
             .cornerRadius(10)
             .shadow(radius: 10)
             .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect

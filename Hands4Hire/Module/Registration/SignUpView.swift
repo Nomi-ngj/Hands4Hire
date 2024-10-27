@@ -10,9 +10,8 @@ import SwiftUI
 struct SignUpView: View {
     
     @ObservedObject private var viewModel: SignUpViewModel
-    @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject var appManager: AppContainerManager
-    
+    @EnvironmentObject var router: Router
     init(viewModel: SignUpViewModel){
         self.viewModel = viewModel
     }
@@ -22,25 +21,26 @@ struct SignUpView: View {
             
             // Username Field
             TextField(Theme.localized.username, text: $viewModel.username)
-                .customTextFieldStyle(backgroundColor: viewModel.backgroundColor, borderStrokeColor: viewModel.primaryColor)
+                .customTextFieldStyle(backgroundColor: appManager.theme.color.whiteColor, borderStrokeColor: appManager.theme.color.primaryColor)
             
             
             // Email Field
             TextField(Theme.localized.emailAddress, text: $viewModel.email)
-                .customTextFieldStyle(backgroundColor: viewModel.backgroundColor, borderStrokeColor: viewModel.primaryColor)
+                .customTextFieldStyle(backgroundColor: appManager.theme.color.whiteColor, borderStrokeColor: appManager.theme.color.primaryColor)
             
             // Password Field
             SecureField(Theme.localized.password, text: $viewModel.password)
-                .customTextFieldStyle(backgroundColor: viewModel.backgroundColor, borderStrokeColor: viewModel.primaryColor)
+                .customTextFieldStyle(backgroundColor: appManager.theme.color.whiteColor, borderStrokeColor: appManager.theme.color.primaryColor)
             
             // Confirm Password Field
             SecureField(Theme.localized.confirmPassword, text: $viewModel.confirmPassword)
-                .customTextFieldStyle(backgroundColor: viewModel.backgroundColor, borderStrokeColor: viewModel.primaryColor)
+                .customTextFieldStyle(backgroundColor: appManager.theme.color.whiteColor, borderStrokeColor: appManager.theme.color.primaryColor)
             
             Spacer()
             // Registration Button
             Button(action: {
                 viewModel.callBackRegisterSuccessfully = {
+                    router.navigateToRoot()
                     appManager.isUserLoggedIn = true
                 }
                 viewModel.registerUser()
@@ -48,7 +48,7 @@ struct SignUpView: View {
                 Text(Theme.localized.signUp)
                 
             }
-            .buttonStyle(BorderedButtonStyle(borderColor: viewModel.primaryColor, foregroundColor: viewModel.backgroundColor, backgroundColor: viewModel.primaryColor, font: Theme.fonts.subhead2))
+            .buttonStyle(BorderedButtonStyle(borderColor: appManager.theme.color.primaryColor, foregroundColor: appManager.theme.color.whiteColor, backgroundColor: appManager.theme.color.primaryColor, font: Theme.fonts.subhead2))
             .disabled(viewModel.isSubmitting)
             
             // Error Message
@@ -59,14 +59,6 @@ struct SignUpView: View {
             }
         }
         .padding()
-        
-        NavigationLink(
-            destination: TabBarController(tabs: TabViewType.allCases.map { TabBarController.TabItem(viewType: $0) })
-                .navigationBarBackButtonHidden(false), // Hide back button
-            isActive: $viewModel.isTabBarActive,
-            label: { EmptyView() }
-        )
-        .padding()
         .customBackButton()
         .toolbar {
             ToolbarItem(placement: .principal) { // Custom font style for the navigation title
@@ -75,16 +67,16 @@ struct SignUpView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
-        .onAppear {
-            // Update ViewModel when the view appears
-            viewModel.updateColors(for: colorScheme)
-            
-            
-        }
-        .onChange(of: colorScheme) { newColorScheme in
-            // Update ViewModel when the color scheme changes
-            viewModel.updateColors(for: newColorScheme)
-        }
+//        .onAppear {
+//            // Update ViewModel when the view appears
+//            viewModel.updateColors(for: colorScheme)
+//            
+//            
+//        }
+//        .onChange(of: colorScheme) { newColorScheme in
+//            // Update ViewModel when the color scheme changes
+//            viewModel.updateColors(for: newColorScheme)
+//        }
     }
 }
 

@@ -37,33 +37,61 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct Hands4HireApp: App {
     
     @State private var showSplash = true
-    @ObservedObject private var appManager = AppContainerManager()
+    @ObservedObject private var appManager:AppContainerManager = AppContainerManager(isDarkMode: Theme.sessionManager.isDarkModeEnabled, isUserLoggedIn: Theme.sessionManager.isUserLoggedIn)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
+    @ObservedObject var router = Router()
     var body: some Scene {
         WindowGroup {
             ZStack {
-                NavigationView{
-                    if showSplash {
-                        SplashScreenView(showSplash: $showSplash)
-                            .environmentObject(appManager)
-                    } else {
+                if showSplash {
+                    SplashScreenView(showSplash: $showSplash)
+                        .environmentObject(appManager)
+                } else {
+                    NavigationStack(path: $router.navPath) {
                         if appManager.isUserLoggedIn {
                             TabBarController(tabs: TabViewType.allCases.map { viewType in
                                 TabBarController.TabItem(viewType: viewType)
                             })
-                            .environmentObject(appManager)
+                            .navigationDestination(for: Router.ServicesFlow.self) { destination in
+                                switch destination {
+                                case .service(let item):
+                                    ServiceDetailView(item: item)
+                                        .navigationTitleWithBackButton(item.title)
+                                case .services(let title, let items):
+                                    ServiceVerticalSectionView(title: title, items: items)
+                                        .navigationTitleWithBackButton(title)
+                                    
+                                case .serviceProvider(let serviceProviderItem):
+                                    ServiceProviderDetailView(provider: serviceProviderItem)
+                                        .navigationTitleWithBackButton(serviceProviderItem.name)
+                                    
+                                case .reviews(let serviceReviews):
+                                    ReviewListView(reviews: serviceReviews)
+                                }
+                            }
                         }else {
+                            
                             LoginView()
-                                .environmentObject(appManager)
+                                .navigationDestination(for: Router.AuthFlow.self) { destination in
+                                    
+                                    switch destination {
+                                    case .login: LoginView()
+                                    case .createAccount: SignUpView(viewModel: .init())
+                                    case .forgotPassword: UnderConstructionView()
+                                            .navigationTitleWithBackButton("Forgot Password")
+                                    }
+                                }
+                            
                         }
+                            
                     }
+                    .environmentObject(appManager)
+                    .environmentObject(router)
                 }
             }
             .onAppear{
-                appManager.isUserLoggedIn = Theme.sessionManager.userProfile != nil
                 _ = LocalizationManager.shared
-//                 FirestoreSeeder.init().seedData()
+                //                 FirestoreSeeder.init().seedData()
             }
         }
     }

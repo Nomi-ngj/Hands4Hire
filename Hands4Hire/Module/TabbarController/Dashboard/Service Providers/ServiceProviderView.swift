@@ -10,35 +10,37 @@ import SwiftUI
 struct ServiceProviderView: View {
     var provider: ServiceProvider // Accept the service provider as a parameter
     @EnvironmentObject var appManager: AppContainerManager
+    @EnvironmentObject var router: Router
     var body: some View {
-        NavigationLink(destination: ServiceProviderDetailView(provider: provider).environmentObject(appManager).navigationBarBackButtonHidden(true).customBackButton()) {
+        
+        Button(action: {
+            router.navigate(to: .serviceProvider(serviceProviderItem: provider))
+        }) {
             VStack(spacing: 8){
                 Image(provider.imageName) // Assuming ServiceProvider has an imageName property
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 100)
                     .clipped()
-
+                
                 Text(localized: provider.name) // Assuming ServiceProvider has a name property
                     .font(Theme.fonts.caption3)
-                    .foregroundColor(appManager.textPrimaryColor)
+                    .foregroundColor(appManager.theme.color.textPrimaryColor)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .frame(height: 40)
                     .padding(.horizontal)
                 Text("⭐️ \(provider.rating, specifier: "%.1f")")
                     .font(Theme.fonts.caption4)
-                    .foregroundColor(appManager.textPrimaryColor)
+                    .foregroundColor(appManager.theme.color.textPrimaryColor)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .frame(height: 25)
                     .padding(.horizontal)
-                    
+                
             }
-            .background(appManager.grayBackgroundColor)    
-            .cornerRadius(10)
-            .preferredColorScheme(appManager.colorScheme)
-
         }
+        .background(appManager.theme.color.whiteColor)
+        .cornerRadius(10)
     }
 }

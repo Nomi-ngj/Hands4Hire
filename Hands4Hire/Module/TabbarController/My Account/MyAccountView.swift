@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 struct MyAccountView: View {
-    @StateObject var viewModel: MyAccountViewModel = .init(user: User.user, colorScheme: .light)
+    @StateObject var viewModel: MyAccountViewModel = .init(user: User.user)
     @State private var selectedSection: MyAccountSection?
     @Environment(\.colorScheme) private var userColorScheme
     @EnvironmentObject var appManager: AppContainerManager
@@ -26,7 +26,7 @@ struct MyAccountView: View {
                     HStack {
                         Text(localized: viewModel.sectionTitle(for: section))
                             .font(Theme.fonts.caption1)
-                            .foregroundColor(viewModel.primaryColor) // This should reflect the updated color
+                            .foregroundColor(appManager.theme.color.primaryColor) // This should reflect the updated color
                             
                     }
                     
@@ -35,14 +35,20 @@ struct MyAccountView: View {
             .onChange(of: userColorScheme) { newColorScheme in
                 appManager.isDarkMode = newColorScheme == .dark
             }
-            .onChange(of: appManager.isDarkMode) { newColorScheme in
-                // Update ViewModel when the color scheme changes
-                viewModel.updateColorScheme(appManager.colorScheme)
-            }
-            .onAppear {
-                viewModel.updateColorScheme(appManager.colorScheme)
-            }
+//            .onChange(of: appManager.isDarkMode) { newColorScheme in
+//                // Update ViewModel when the color scheme changes
+//                viewModel.updateColorScheme(appManager.colorScheme)
+//            }
+//            .onAppear {
+//                viewModel.updateColorScheme(appManager.colorScheme)
+//            }
             .preferredColorScheme(appManager.colorScheme)
+            .toolbar {
+                ToolbarItem(placement: .principal) { // Custom font style for the navigation title
+                    Text(localized: Theme.localized.myAccount.localized())
+                        .font(Theme.fonts.headline) // Customize font, size, and weight
+                }
+            }
             .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
         }
     }
@@ -57,6 +63,7 @@ struct MyAccountView: View {
                 }
             }
             .customBackButton()
+            .environmentObject(appManager)
         
         switch section {
         case .profile:
@@ -93,7 +100,7 @@ struct MyAccountView: View {
         case .language:
             // Navigate to Language View
             return AnyView(LanguageSelectionView()
-                .customBackButton()
+                
                 .toolbar {
                     ToolbarItem(placement: .principal) { // Custom font style for the navigation title
                         Text(title)
@@ -101,6 +108,7 @@ struct MyAccountView: View {
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
+                .customBackButton()
                 .environmentObject(appManager))
         case .notifications:
             // Navigate to Notifications View
@@ -134,7 +142,7 @@ struct MyAccountView: View {
                 }else{
                     debugPrint("dismiss LogoutConfirmationPopup view")
                 }
-            })
+            }).customBackButton().environmentObject(appManager)
             
             return AnyView(view)
         }
@@ -187,7 +195,6 @@ struct LogoutConfirmationPopup: View {
         .cornerRadius(12)
         .shadow(radius: 20)
         .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
-        .customBackButton()
         .toolbar {
             ToolbarItem(placement: .principal) { // Custom font style for the navigation title
                 Text(Theme.localized.logout)

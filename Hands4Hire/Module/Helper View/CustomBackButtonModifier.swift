@@ -10,8 +10,7 @@ import SwiftUI
 
 struct CustomBackButtonModifier: ViewModifier {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.colorScheme) private var colorScheme
-    
+    @EnvironmentObject var appManager: AppContainerManager
     func body(content: Content) -> some View {
         content
             .navigationBarBackButtonHidden(true)
@@ -26,7 +25,7 @@ struct CustomBackButtonModifier: ViewModifier {
                 Image("back")
                     .renderingMode(.template)
                     .scaledToFit()
-                    .foregroundColor(colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor)
+                    .foregroundColor(appManager.theme.color.blackColor)
             }
         }
     }
@@ -35,5 +34,27 @@ struct CustomBackButtonModifier: ViewModifier {
 extension View {
     func customBackButton() -> some View {
         self.modifier(CustomBackButtonModifier())
+    }
+}
+
+
+extension View {
+    func navigationTitle(_ title: String) -> some View {
+        self.toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(title)
+                    .font(Theme.fonts.headline)
+            }
+        }
+    }
+    
+    func navigationTitleWithBackButton(_ title: String) -> some View {
+        self.toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(title)
+                    .font(Theme.fonts.headline)
+            }
+        }
+        .customBackButton()
     }
 }

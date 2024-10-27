@@ -12,7 +12,6 @@ struct ServiceDetailView: View {
     var serviceProviders: [ServiceProvider] = ServiceProvider.serviceProviders
     @EnvironmentObject var appManager: AppContainerManager
     
-    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -53,12 +52,6 @@ struct ServiceDetailView: View {
         }
         .padding(.horizontal)
         .background(Color.gray.opacity(0.1))
-        .toolbar {
-            ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                Text(localized: item.title.localized())
-                    .font(Theme.fonts.headline) // Customize font, size, and weight
-            }
-        }
         .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }

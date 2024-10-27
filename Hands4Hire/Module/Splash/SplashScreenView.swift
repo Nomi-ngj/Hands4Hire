@@ -31,12 +31,10 @@ struct SplashScreenView: View {
                         logoOpacity = 1.0
                     }
                 }
-                //.preferredColorScheme(/*appManager*/.colorScheme)
-//                .foregroundColor((appManager.colorScheme == .light ? Theme.color.whiteColor : Theme.color.blackColor).edgesIgnoringSafeArea(.all))
             
             Text(Theme.localized.appName)
                 .font(Theme.fonts.title3)
-                .foregroundColor(Theme.color.primaryColor)
+                .foregroundColor(appManager.theme.color.primaryColor)
                 .opacity(taglineOpacity)
                 .offset(y: taglineOffset)
                 .onAppear {
@@ -49,14 +47,6 @@ struct SplashScreenView: View {
             Spacer()
         }
         .background(Color.clear)
-        .onChange(of: appManager.isDarkMode) { newColorScheme in
-            // Update ViewModel when the color scheme changes
-//            viewModel.updateColors(for: appManager.colorScheme)
-        }
-        .onChange(of: userColorScheme) { newColorScheme in
-            appManager.isDarkMode = newColorScheme == .dark
-            appManager.colorScheme = newColorScheme
-        }
         .onAppear {
             // Duration of splash screen before transitioning to the next view
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -66,6 +56,6 @@ struct SplashScreenView: View {
                 }
             }
         }
-        .preferredColorScheme(userColorScheme)
+        .preferredColorScheme(appManager.colorScheme)
     }
 }

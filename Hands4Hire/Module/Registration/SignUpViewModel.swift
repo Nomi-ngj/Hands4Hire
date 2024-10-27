@@ -8,8 +8,8 @@
 import SwiftUI
 
 class SignUpViewModel: ObservableObject {
-    @Published var primaryColor: Color
-    @Published var backgroundColor: Color
+//    @Published var primaryColor: Color
+//    @Published var backgroundColor: Color
     
     @Published var username: String = "Nouman Gul Junejo"
     @Published var email: String = "Noumanguljunejo@gmail.com"
@@ -17,21 +17,21 @@ class SignUpViewModel: ObservableObject {
     @Published var confirmPassword: String = "Test"
     @Published var isSubmitting: Bool = false
     @Published var registrationError: String?
-    @Binding var isTabBarActive:Bool
+//    @Binding var isTabBarActive:Bool
     
     var callBackRegisterSuccessfully: (() -> Void)?
-    init(colorScheme: ColorScheme, isTabBarActive:Binding<Bool>) {
-        // Initialize colors based on the provided color scheme
-        _isTabBarActive = isTabBarActive
-        self.primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
-        self.backgroundColor = colorScheme == .dark ? Theme.color.blackColor : Theme.color.whiteColor
-    }
+//    init(colorScheme: ColorScheme, isTabBarActive:Binding<Bool>) {
+//        // Initialize colors based on the provided color scheme
+//        _isTabBarActive = isTabBarActive
+//        self.primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
+//        self.backgroundColor = colorScheme == .dark ? Theme.color.blackColor : Theme.color.whiteColor
+//    }
     
-    func updateColors(for colorScheme: ColorScheme) {
-        // Update colors based on the new color scheme
-        self.primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
-        self.backgroundColor = colorScheme == .dark ? Theme.color.blackColor : Theme.color.whiteColor
-    }
+//    func updateColors(for colorScheme: ColorScheme) {
+//        // Update colors based on the new color scheme
+//        self.primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
+//        self.backgroundColor = colorScheme == .dark ? Theme.color.blackColor : Theme.color.whiteColor
+//    }
     
     func registerUser() {
         guard !username.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {

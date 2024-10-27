@@ -8,7 +8,7 @@
 import Foundation
 
 // Assuming you have a ServiceProvider struct
-struct ServiceProvider: Identifiable {
+struct ServiceProvider: Identifiable, Hashable, Codable {
     var id: Int
     var name: String
     var imageName: String

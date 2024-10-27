@@ -33,6 +33,10 @@ class SessionManager:NSObject{
         }
     }
     
+    var isUserLoggedIn:Bool{
+        return userProfile == nil ? false:true
+    }
+    
     var isNotificationEnabled:Bool{
         set{
             userDefault.set(newValue, forKey: "NotificationEnabled")

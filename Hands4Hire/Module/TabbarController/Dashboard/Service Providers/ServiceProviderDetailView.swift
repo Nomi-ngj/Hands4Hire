@@ -10,7 +10,7 @@ import SwiftUI
 struct ServiceProviderDetailView: View {
     var provider: ServiceProvider // Accept the service provider as a parameter
     @EnvironmentObject var appManager: AppContainerManager
-    @Environment(\.colorScheme) private var userColorScheme
+    @EnvironmentObject var router: Router
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -33,9 +33,11 @@ struct ServiceProviderDetailView: View {
                             .font(Theme.fonts.footnoteMedium) +
                          Text("\(provider.rating, specifier: "%.1f")")
                             .font(Theme.fonts.footnote))
-                        NavigationLink(destination: ReviewListView(reviews: provider.reviews).environmentObject(appManager).navigationBarBackButtonHidden(true).customBackButton()) {
+                        Button(action:{
+                            router.navigate(to: .reviews(serviceReviews: provider.reviews))
+                        }) {
                             Text(localized: "(\(provider.reviews.count) reviews)")
-                                .foregroundColor(Theme.color.navyBlueTextColor)
+                                .foregroundColor(appManager.theme.color.navyBlueTextColor)
                                 .font(Theme.fonts.footnoteMedium)
                         }
                     }
@@ -44,7 +46,7 @@ struct ServiceProviderDetailView: View {
                         .font(Theme.fonts.footnote)
                     Text(localized:"Availability: \(provider.isAvailable ? "Available" : "Not Available")")
                         .font(Theme.fonts.footnote)
-                        .foregroundColor(provider.isAvailable ? Theme.color.primaryColor : Theme.color.errorColor)
+                        .foregroundColor(provider.isAvailable ? appManager.theme.color.primaryColor : appManager.theme.color.errorColor)
                 }
                 .padding(.horizontal, 8)
                 
@@ -57,7 +59,7 @@ struct ServiceProviderDetailView: View {
                 LazyVGrid(columns: columns, spacing: 8) {
                     
                     ForEach(provider.services) { item in
-                        ServiceProviderServiceItemView(viewModel: .init(colorScheme: userColorScheme), item: item)
+                        ServiceProviderServiceItemView(item: item)
                             .environmentObject(appManager)
                     }
                 }.padding(.horizontal)
@@ -65,12 +67,6 @@ struct ServiceProviderDetailView: View {
             Spacer()
         }
         .background(Color.gray.opacity(0.15))
-        .toolbar {
-            ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                Text(localized: provider.name)
-                    .font(Theme.fonts.headline) // Customize font, size, and weight
-            }
-        }
         .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }

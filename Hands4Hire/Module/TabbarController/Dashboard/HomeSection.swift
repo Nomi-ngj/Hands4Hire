@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HomeSection: String, CaseIterable {
+enum HomeSection: String, CaseIterable, Hashable, Codable {
     case categories = "Categories"
     case cleaningServices = "Cleaning Services"
     case homeRepairs = "Home Repairs"

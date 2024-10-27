@@ -8,23 +8,16 @@
 import SwiftUI
 
 class MyAccountViewModel: ObservableObject {
-    @Published var primaryColor: Color
     @Published var user: User
     @Published var isLogout: Bool = false
 
-    init(user: User, colorScheme: ColorScheme) {
+    init(user: User) {
         self.user = user
         // Set primary color based on the initial color scheme
-        self.primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
     }
     
-    func updateColorScheme(_ colorScheme: ColorScheme) {
-        primaryColor = colorScheme == .dark ? Theme.color.whiteColor : Theme.color.primaryColor
-    }
-    
-    func updateUser(_ user: User, with colorScheme: ColorScheme) {
+    func updateUser(_ user: User) {
         self.user = user
-        updateColorScheme(colorScheme)
     }
     
     func sectionTitle(for section: MyAccountSection) -> String {

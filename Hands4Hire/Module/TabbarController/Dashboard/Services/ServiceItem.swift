@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ServiceItem: Identifiable {
+struct ServiceItem: Identifiable, Hashable, Codable {
     let id: Int
     let title: String
     let imageName: String

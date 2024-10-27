@@ -12,15 +12,13 @@ struct ServicesListView: View {
     @ObservedObject private var viewModel = ServicesViewModel()  // Observe the view model
     
     var body: some View {
-        NavigationView {
-            List(viewModel.services) { service in
-                VStack(alignment: .leading) {
-                    Text(service.name)
-                        .font(.headline)
-                    Text(service.description ?? "")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
+        List(viewModel.services) { service in
+            VStack(alignment: .leading) {
+                Text(service.name)
+                    .font(.headline)
+                Text(service.description ?? "")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
         }
         .onAppear {
