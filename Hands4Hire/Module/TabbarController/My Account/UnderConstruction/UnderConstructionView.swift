@@ -36,7 +36,6 @@ struct UnderConstructionView: View {
             .background(appManager.theme.color.whiteColor)
             .cornerRadius(10)
             .shadow(radius: 10)
-            .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
         }
     }
 }

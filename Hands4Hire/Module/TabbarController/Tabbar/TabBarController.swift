@@ -30,10 +30,10 @@ class TabBarViewModel: ObservableObject{
 struct TabBarController: View {
     
     struct TabItem {
-        var viewType: TabViewType
+        var viewType: TabBarFlow
     }
     @ObservedObject var viewModel:TabBarViewModel = .init(showTopBar: .constant(false))
-    @State private var selectedTab: TabViewType
+    @State private var selectedTab: TabBarFlow
     @State private var tabOpacity = 0.0
     @EnvironmentObject var appManager: AppContainerManager
     
@@ -43,29 +43,9 @@ struct TabBarController: View {
         _selectedTab = State(initialValue: tabs.first!.viewType)
     }
     
-    @ViewBuilder
-    func tabView(for viewType: TabViewType) -> some View {
-        switch viewType {
-        case .home:
-            DashboardView()
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text(Theme.localized.appName)
-                            .font(Theme.fonts.headline)
-                    }
-                }
-        case .orders:
-            ServicesListView()
-        case .favorites:
-            UsersListView()
-        case .profile:
-            MyAccountView()
-        }
-    }
-    
     var body: some View {
         VStack(spacing: 0) {
-            tabView(for: selectedTab)
+            selectedTab.view
                 .edgesIgnoringSafeArea(.bottom)
             
             HStack(spacing: 0) {
@@ -94,7 +74,6 @@ struct TabBarController: View {
                                 .frame(width: 25, height: 25, alignment: .center)
                             
                             if tab.viewType == selectedTab{
-                                
                                 Text(localized: tab.viewType.title)
                                     .font(viewModel.fontLabel)
                             }
@@ -104,34 +83,14 @@ struct TabBarController: View {
                     .frame(maxWidth: .infinity)
                 }
             }
-            .background(appManager.isDarkMode ? Color.black: Color.white)
+            .background(appManager.theme.color.whiteColor)
             .frame(height: 70)
             .opacity(tabOpacity)
             .onAppear {
                 withAnimation(.easeIn(duration: 0.5)) {
                     tabOpacity = 1.0
                 }
-                // Observe the language change notification
-                NotificationCenter.default.addObserver(forName: .languageDidChange, object: nil, queue: .main) { _ in
-                    // Update your state or perform necessary actions
-                    DispatchQueue.main.async {
-                        self.selectedTab = self.selectedTab // Implement this function to get the current language
-                    }
-                }
             }
-            .onDisappear {
-                // Remove the observer to avoid memory leaks
-                NotificationCenter.default.removeObserver(self, name: .languageDidChange, object: nil)
-            }
-//            .onChange(of: appManager.isDarkMode) { newColorScheme in
-//                // Update ViewModel when the color scheme changes
-//                viewModel.updateColors(for: appManager.colorScheme)
-//            }
-//            .onChange(of: userColorScheme) { newColorScheme in
-//                appManager.isDarkMode = newColorScheme == .dark
-//            }
-//            .preferredColorScheme(appManager.colorScheme)
-            
         }
     }
 }
@@ -139,7 +98,7 @@ struct TabBarController: View {
 #if DEBUG
 #Preview{
     VStack{
-        TabBarController(tabs: TabViewType.allCases.map { viewType in
+        TabBarController(tabs: TabBarFlow.allCases.map { viewType in
             TabBarController.TabItem(viewType: viewType)
         })
     }

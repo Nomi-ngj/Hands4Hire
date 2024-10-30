@@ -146,6 +146,17 @@
         }
       }
     },
+    "$50 - $150" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$50 - $150"
+          }
+        }
+      }
+    },
     "$80 - $200" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -870,6 +881,9 @@
           }
         }
       }
+    },
+    "Book Now" : {
+
     },
     "Cancel" : {
       "extractionState" : "manual",

@@ -46,6 +46,7 @@ extension View {
                     .font(Theme.fonts.headline)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     func navigationTitleWithBackButton(_ title: String) -> some View {
@@ -56,5 +57,6 @@ extension View {
             }
         }
         .customBackButton()
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

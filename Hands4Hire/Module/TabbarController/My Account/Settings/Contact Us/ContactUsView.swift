@@ -14,9 +14,7 @@ struct ContactUsView: View {
                 Text("For support, please email us at support@example.com")
             }
         }
-        .customBackButton()
-        .navigationTitle("Contact Us")
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
+        .navigationTitleWithBackButton("Contact Us")
     }
 }
 

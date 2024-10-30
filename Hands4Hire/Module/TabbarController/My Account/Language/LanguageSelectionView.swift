@@ -15,6 +15,7 @@ struct LanguageSelectionView: View {
         List(AppLanguage.allCases) { language in
             HStack {
                 Text(language.displayName)
+                    .font(Theme.fonts.caption1)
                 Spacer()
                 if language == localizationManager.selectedLanguage {
                     Image(systemName: "checkmark")
@@ -24,6 +25,7 @@ struct LanguageSelectionView: View {
             .contentShape(Rectangle())
             .onTapGesture {
                 localizationManager.selectedLanguage = language
+                _ = LocalizationManager.shared
             }
         }
     }

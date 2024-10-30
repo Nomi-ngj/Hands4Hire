@@ -7,12 +7,20 @@
 
 import Foundation
 
-struct User:Codable {
+struct User: Codable, Equatable {
     let username: String
     let email: String
     let profilePictureURL: String
     var userType: UserType
 }
+
+enum UserType: String, Codable, Hashable, Equatable {
+    case user
+    case serviceProvider
+    case agency
+}
+
+
 
 extension User {
     static let user = User(username: "Nouman Gul", email: "Noumanguljunejo@gmail.com", profilePictureURL: "https://media.licdn.com/dms/image/D4D03AQG5cquTJk65ug/profile-displayphoto-shrink_800_800/0/1701194433108?e=1727308800&v=beta&t=YPuai8-9sBbnVqqhTEYtWGeRu35luh8NmnzNoot-Vn8", userType: .user)

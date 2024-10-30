@@ -52,6 +52,5 @@ struct ServiceDetailView: View {
         }
         .padding(.horizontal)
         .background(Color.gray.opacity(0.1))
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }

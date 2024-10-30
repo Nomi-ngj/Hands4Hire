@@ -17,13 +17,7 @@ struct ReviewListView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .background(Color.gray.opacity(0.15))
-        .toolbar {
-            ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                Text("Reviews")
-                    .font(Theme.fonts.headline) // Customize font, size, and weight
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
+        .navigationTitleWithBackButton("Reviews")
     }
 }
 

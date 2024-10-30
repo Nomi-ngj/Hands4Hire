@@ -25,19 +25,18 @@ struct ProfileView: View {
     var body: some View {
         Form {
             Section(header: Text(Theme.localized.profilePicture)
-                                .font(Theme.fonts.footnote)) {
-                                    ProfileImage(urlString: viewModel.user.profilePictureURL)
-            }
+                .font(Theme.fonts.caption3)) {
+                    ProfileImage(urlString: viewModel.user.profilePictureURL)
+                }
             
             Section(header: Text(Theme.localized.accountInformation)
-                                .font(Theme.fonts.footnote)) {
-                Text(viewModel.user.username)
-                    .font(Theme.fonts.caption2)
-                Text(viewModel.user.email)
-                    .font(Theme.fonts.caption2)
-            }
+                .font(Theme.fonts.caption3)) {
+                    Text(viewModel.user.username)
+                        .font(Theme.fonts.caption2)
+                    Text(viewModel.user.email)
+                        .font(Theme.fonts.caption2)
+                }
         }
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }
 

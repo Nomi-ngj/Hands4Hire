@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MyAccountSection: String, CaseIterable, Identifiable {
+enum MyAccountSection: String, CaseIterable {
     case profile
     case notifications
     case settings
@@ -20,5 +20,4 @@ enum MyAccountSection: String, CaseIterable, Identifiable {
     case delete
     case logout
     
-    var id: String { rawValue }
 }

@@ -59,24 +59,7 @@ struct SignUpView: View {
             }
         }
         .padding()
-        .customBackButton()
-        .toolbar {
-            ToolbarItem(placement: .principal) { // Custom font style for the navigation title
-                Text(Theme.localized.signUp)
-                    .font(Theme.fonts.headline) // Customize font, size, and weight
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
-//        .onAppear {
-//            // Update ViewModel when the view appears
-//            viewModel.updateColors(for: colorScheme)
-//            
-//            
-//        }
-//        .onChange(of: colorScheme) { newColorScheme in
-//            // Update ViewModel when the color scheme changes
-//            viewModel.updateColors(for: newColorScheme)
-//        }
+        .navigationTitleWithBackButton(Theme.localized.signUp.localized())
     }
 }
 

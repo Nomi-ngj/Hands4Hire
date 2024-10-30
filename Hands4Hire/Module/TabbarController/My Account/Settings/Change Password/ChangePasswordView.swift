@@ -12,7 +12,7 @@ struct ChangePasswordView: View {
     @State private var newPassword: String = ""
     @State private var confirmPassword: String = ""
     @EnvironmentObject var appManager: AppContainerManager
-
+    @EnvironmentObject var router: Router
     var body: some View {
         Form {
             Section(header: Text("Change Password")) {
@@ -24,6 +24,7 @@ struct ChangePasswordView: View {
             Button(action: {
                 // Handle change password action
                 print("Change Password tapped")
+                router.navigateBack()
             }) {
                 Text("Change Password")
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -33,9 +34,7 @@ struct ChangePasswordView: View {
                     .cornerRadius(8)
             }
         }
-        .customBackButton()
-        .navigationTitle("Change Password")
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
+        .navigationTitleWithBackButton("Change Password")
     }
 }
 

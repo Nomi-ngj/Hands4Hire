@@ -47,6 +47,20 @@ struct ServiceProviderDetailView: View {
                     Text(localized:"Availability: \(provider.isAvailable ? "Available" : "Not Available")")
                         .font(Theme.fonts.footnote)
                         .foregroundColor(provider.isAvailable ? appManager.theme.color.primaryColor : appManager.theme.color.errorColor)
+                 
+                    Button {
+                        //Booking Route
+                    } label: {
+                        HStack {
+                            Text("Book Now")
+                                .font(Theme.fonts.subhead2)
+                                .foregroundColor(appManager.theme.color.whiteColor)
+                        }
+                    }
+                    .frame(width: 130, height: 40)
+                    .buttonBorderShape(.roundedRectangle)
+                    .background(appManager.theme.color.primaryColor)
+                    .cornerRadius(12)
                 }
                 .padding(.horizontal, 8)
                 
@@ -67,6 +81,5 @@ struct ServiceProviderDetailView: View {
             Spacer()
         }
         .background(Color.gray.opacity(0.15))
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }

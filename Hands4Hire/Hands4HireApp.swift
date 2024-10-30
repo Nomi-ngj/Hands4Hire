@@ -21,11 +21,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let db = Firestore.firestore()
         let settings = FirestoreSettings()
         // Enable offline persistence (default is enabled)
-        settings.isPersistenceEnabled = true
+//        settings.isPersistenceEnabled = true
 
-        
-        // Set cache size (use FirestoreCacheSizeUnlimited for unlimited cache size if available)
-        settings.cacheSizeBytes = FirestoreCacheSizeUnlimited // or specify a size like 10 * 1024 * 1024 (10 MB)
+//        settings.cacheSizeBytes = FirestoreCacheSizeUnlimited // or specify a size like 10 * 1024 * 1024 (10 MB)
 
         db.settings = settings
         return true
@@ -49,41 +47,24 @@ struct Hands4HireApp: App {
                 } else {
                     NavigationStack(path: $router.navPath) {
                         if appManager.isUserLoggedIn {
-                            TabBarController(tabs: TabViewType.allCases.map { viewType in
+                            TabBarController(tabs: TabBarFlow.allCases.map { viewType in
                                 TabBarController.TabItem(viewType: viewType)
                             })
-                            .navigationDestination(for: Router.ServicesFlow.self) { destination in
-                                switch destination {
-                                case .service(let item):
-                                    ServiceDetailView(item: item)
-                                        .navigationTitleWithBackButton(item.title)
-                                case .services(let title, let items):
-                                    ServiceVerticalSectionView(title: title, items: items)
-                                        .navigationTitleWithBackButton(title)
-                                    
-                                case .serviceProvider(let serviceProviderItem):
-                                    ServiceProviderDetailView(provider: serviceProviderItem)
-                                        .navigationTitleWithBackButton(serviceProviderItem.name)
-                                    
-                                case .reviews(let serviceReviews):
-                                    ReviewListView(reviews: serviceReviews)
-                                }
+                            .navigationDestination(for: ServicesFlow.self) { destination in
+                                destination.view
+                            }
+                            .navigationDestination(for: MyAccountFlow.self) { destination in
+                                destination.view
+                            }
+                            .navigationDestination(for: SettingsFlow.self) { destination in
+                                destination.view
                             }
                         }else {
-                            
                             LoginView()
-                                .navigationDestination(for: Router.AuthFlow.self) { destination in
-                                    
-                                    switch destination {
-                                    case .login: LoginView()
-                                    case .createAccount: SignUpView(viewModel: .init())
-                                    case .forgotPassword: UnderConstructionView()
-                                            .navigationTitleWithBackButton("Forgot Password")
-                                    }
+                                .navigationDestination(for: AuthFlow.self) { destination in
+                                    destination.view
                                 }
-                            
-                        }
-                            
+                        }       
                     }
                     .environmentObject(appManager)
                     .environmentObject(router)

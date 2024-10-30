@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum UserType:Codable {
-    case user
-    case serviceProvider
-    case agency
-}
-
 struct LoginView: View {
     
     @EnvironmentObject var appManager: AppContainerManager

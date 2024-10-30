@@ -15,9 +15,7 @@ struct FAQsView: View {
                 Text("Q: How do I contact support?\nA: You can contact support by emailing support@example.com.")
             }
         }
-        .customBackButton()
-        .navigationTitle("FAQs")
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
+        .navigationTitleWithBackButton("FAQs")
     }
 }
 

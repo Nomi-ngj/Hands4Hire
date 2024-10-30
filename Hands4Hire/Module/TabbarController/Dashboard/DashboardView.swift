@@ -29,7 +29,6 @@ struct DashboardView: View {
             }
         }
         .background(Color.gray.opacity(0.15))
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }
 
@@ -66,19 +65,6 @@ struct AdvertisementCard: View {
             Text(service.title)
                 .font(.headline)
                 .padding()
-            
-//            Text(service.description) // Assuming you have a description property
-//                .font(.subheadline)
-//                .foregroundColor(.gray)
-//                .padding()
-            
-            // Offer or promotion section
-//            if let offer = service.offer {
-//                Text("Offer: \(offer.title)")
-//                    .font(.caption)
-//                    .foregroundColor(.red)
-//                    .padding(.bottom)
-//            }
         }
         .padding()
         .background(Color.white)

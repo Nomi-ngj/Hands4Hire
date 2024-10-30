@@ -42,6 +42,5 @@ struct ServiceVerticalSectionView: View {
             }
         }
         .background(Color.gray.opacity(0.15))
-        .navigationBarTitleDisplayMode(.inline) // This ensures the title has the scrolling effect
     }
 }
