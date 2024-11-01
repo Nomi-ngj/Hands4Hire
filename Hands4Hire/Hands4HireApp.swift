@@ -17,7 +17,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         
-        // Firestore settings
         let db = Firestore.firestore()
         let settings = FirestoreSettings()
         // Enable offline persistence (default is enabled)

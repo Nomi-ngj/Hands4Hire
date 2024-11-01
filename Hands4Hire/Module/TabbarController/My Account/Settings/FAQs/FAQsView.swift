@@ -10,9 +10,9 @@ import SwiftUI
 struct FAQsView: View {
     var body: some View {
         Form {
-            Section(header: Text("FAQs")) {
-                Text("Q: How do I reset my password?\nA: You can reset your password from the settings menu.")
-                Text("Q: How do I contact support?\nA: You can contact support by emailing support@example.com.")
+            Section(header: Text("FAQs").font(Theme.fonts.caption3)) {
+                Text("Q: How do I reset my password?\nA: You can reset your password from the settings menu.").font(Theme.fonts.caption1)
+                Text("Q: How do I contact support?\nA: You can contact support by emailing support@example.com.").font(Theme.fonts.caption1)
             }
         }
         .navigationTitleWithBackButton("FAQs")

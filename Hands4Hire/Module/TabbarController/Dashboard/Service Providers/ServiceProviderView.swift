@@ -25,14 +25,14 @@ struct ServiceProviderView: View {
                 
                 Text(localized: provider.name) // Assuming ServiceProvider has a name property
                     .font(Theme.fonts.caption3)
-                    .foregroundColor(appManager.theme.color.textPrimaryColor)
+                    .foregroundColor(appManager.theme.color.blackColor)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .frame(height: 40)
                     .padding(.horizontal)
                 Text("⭐️ \(provider.rating, specifier: "%.1f")")
                     .font(Theme.fonts.caption4)
-                    .foregroundColor(appManager.theme.color.textPrimaryColor)
+                    .foregroundColor(appManager.theme.color.blackColor)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .frame(height: 25)

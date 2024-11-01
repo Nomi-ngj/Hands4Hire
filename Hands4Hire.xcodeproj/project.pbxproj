@@ -78,7 +78,6 @@
 		8CB7276F2C93480D00E107EF /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727462C93480D00E107EF /* MyAccountViewModel.swift */; };
 		8CB727702C93480D00E107EF /* ElevationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727482C93480D00E107EF /* ElevationModifier.swift */; };
 		8CB727732C93480D00E107EF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7274B2C93480D00E107EF /* TabBarController.swift */; };
-		8CB727742C93480D00E107EF /* TabViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7274C2C93480D00E107EF /* TabViewType.swift */; };
 		8CB727792C934D4C00E107EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CB727782C934D4C00E107EF /* GoogleService-Info.plist */; };
 		8CB7277B2C934E2B00E107EF /* FirestoreSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7277A2C934E2B00E107EF /* FirestoreSeeder.swift */; };
 		8CB727802C934F3C00E107EF /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7277F2C934F3C00E107EF /* UsersListView.swift */; };
@@ -166,7 +165,6 @@
 		8CB727462C93480D00E107EF /* MyAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewModel.swift; sourceTree = "<group>"; };
 		8CB727482C93480D00E107EF /* ElevationModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevationModifier.swift; sourceTree = "<group>"; };
 		8CB7274B2C93480D00E107EF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		8CB7274C2C93480D00E107EF /* TabViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewType.swift; sourceTree = "<group>"; };
 		8CB727782C934D4C00E107EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CB7277A2C934E2B00E107EF /* FirestoreSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSeeder.swift; sourceTree = "<group>"; };
 		8CB7277F2C934F3C00E107EF /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
@@ -474,7 +472,6 @@
 			isa = PBXGroup;
 			children = (
 				8CB7274B2C93480D00E107EF /* TabBarController.swift */,
-				8CB7274C2C93480D00E107EF /* TabViewType.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -658,7 +655,6 @@
 				8C7BC9C52CCC108800B951AF /* LocalizationManager.swift in Sources */,
 				8CB7277B2C934E2B00E107EF /* FirestoreSeeder.swift in Sources */,
 				8CB726C72C93311A00E107EF /* FirestoreManager.swift in Sources */,
-				8CB727742C93480D00E107EF /* TabViewType.swift in Sources */,
 				8CB727672C93480D00E107EF /* ChangePasswordView.swift in Sources */,
 				8C7BC9C72CCC10AE00B951AF /* AppLanguage.swift in Sources */,
 				8C7BC97E2CBF0C6C00B951AF /* ServiceItemView.swift in Sources */,

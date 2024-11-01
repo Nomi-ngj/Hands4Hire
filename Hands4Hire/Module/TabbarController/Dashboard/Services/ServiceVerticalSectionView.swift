@@ -41,6 +41,5 @@ struct ServiceVerticalSectionView: View {
                 }.padding(.horizontal)
             }
         }
-        .background(Color.gray.opacity(0.15))
     }
 }

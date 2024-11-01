@@ -23,6 +23,7 @@ enum ServicesFlow: Hashable, Codable {
                 .navigationTitleWithBackButton(item.title)
         case .services(let title, let items):
             ServiceVerticalSectionView(title: title, items: items)
+                .background(Color.gray.opacity(0.15))
                 .navigationTitleWithBackButton(title)
             
         case .serviceProvider(let serviceProviderItem):

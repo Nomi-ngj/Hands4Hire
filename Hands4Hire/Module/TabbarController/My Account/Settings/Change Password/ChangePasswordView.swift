@@ -14,26 +14,38 @@ struct ChangePasswordView: View {
     @EnvironmentObject var appManager: AppContainerManager
     @EnvironmentObject var router: Router
     var body: some View {
-        Form {
-            Section(header: Text("Change Password")) {
-                SecureField("Current Password", text: $currentPassword)
-                SecureField("New Password", text: $newPassword)
-                SecureField("Confirm New Password", text: $confirmPassword)
+        VStack{
+            Form {
+                Section(header: Text("Change Password").font(Theme.fonts.caption3)) {
+                    SecureField("Current Password", text: $currentPassword)
+                        .font(Theme.fonts.caption1)
+                    SecureField("New Password", text: $newPassword)
+                        .font(Theme.fonts.caption1)
+                    SecureField("Confirm New Password", text: $confirmPassword)
+                        .font(Theme.fonts.caption1)
+                }
             }
+            
+            Spacer()
             
             Button(action: {
                 // Handle change password action
-                print("Change Password tapped")
                 router.navigateBack()
             }) {
                 Text("Change Password")
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .foregroundColor(.white)
+                    .foregroundColor(appManager.theme.color.whiteColor)
+                    .font(Theme.fonts.caption1)
                     .padding()
                     .background(Color.blue)
                     .cornerRadius(8)
             }
+            .padding()
+            
+            Spacer()
+            Spacer()
         }
+        
         .navigationTitleWithBackButton("Change Password")
     }
 }
