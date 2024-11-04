@@ -13,6 +13,10 @@ struct LoginView: View {
     @State private var isTabBarActive = false
     @State private var isRegistered = false
     @EnvironmentObject var router: Router
+    
+    @State private var username = ""
+    @State private var password = ""
+    
     var body: some View {
         VStack {
             Spacer()
@@ -30,11 +34,18 @@ struct LoginView: View {
             
             // Email and Password Fields
             VStack {
-                TextField(Theme.localized.emailAddress, text: .constant(""))
+                self.localizedTextField(Theme.localized.emailAddress.localized(), text: $username)
                     .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
                 
-                SecureField(Theme.localized.password, text: .constant(""))
+                
+                self.localizedSecureField(Theme.localized.password.localized(), text: $password)
                     .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
+//                let key = Theme.localized.emailAddress.localized()
+//                TextField(key, text: $username)
+//                    .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
+////                
+//                SecureField(Theme.localized.password.localized(), text: .constant(""))
+//                    .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
                 
                 HStack {
                     Spacer()
@@ -42,7 +53,7 @@ struct LoginView: View {
                         // Forgot password action
                         router.navigate(to: .forgotPassword)
                     }) {
-                        Text(Theme.localized.forgotPassword)
+                        Text(Theme.localized.forgotPassword.localized())
                             .font(Theme.fonts.caption2)
                             .foregroundColor(appManager.theme.color.primaryColor)
                     }
@@ -55,7 +66,7 @@ struct LoginView: View {
                     // Login action
                     pushTabbar()
                 }) {
-                    Text(Theme.localized.login)
+                    Text(localized: Theme.localized.login.localized())
                 }
                 .buttonStyle(BorderedButtonStyle(borderColor: appManager.theme.color.primaryColor, foregroundColor: appManager.theme.color.whiteColor, backgroundColor: appManager.theme.color.primaryColor, font: Theme.fonts.subhead2))
                 
@@ -63,13 +74,13 @@ struct LoginView: View {
                     router.navigate(to: .createAccount)
 //                    isRegistered = true
                 }) {
-                    Text(Theme.localized.signUp)
+                    Text(localized: Theme.localized.signUp.localized())
                 }
                 .buttonStyle(BorderedButtonStyle(borderColor: appManager.theme.color.primaryColor, foregroundColor: appManager.theme.color.primaryColor, backgroundColor: appManager.theme.color.whiteColor, font: Theme.fonts.subhead2))
                 
             }.padding(.bottom, 20)
             
-            Text(Theme.localized.Or)
+            Text(localized: Theme.localized.Or.localized())
                 .font(Theme.fonts.caption1)
                 .foregroundColor(Color.gray)
                 .padding(.vertical, 20)
@@ -107,7 +118,7 @@ struct LoginView: View {
                 // Skip action
                 pushTabbar()
             }) {
-                Text(Theme.localized.skipAndContinueAsaGuest)
+                Text(localized: Theme.localized.skipAndContinueAsaGuest.localized())
                     .font(Theme.fonts.caption1)
                     .foregroundColor(appManager.theme.color.primaryColor)
             }

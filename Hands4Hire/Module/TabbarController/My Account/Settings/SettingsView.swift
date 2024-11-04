@@ -14,23 +14,23 @@ struct SettingsView: View {
     @EnvironmentObject var router: Router
     var body: some View {
         Form {
-            Section(header: Text(localized: "Appearance").font(Theme.fonts.caption3)) {
+            Section(header: Text(localized: Theme.localized.appearance.localized()).font(Theme.fonts.caption3)) {
                 Toggle(isOn: $appManager.isDarkMode) {
-                    Text(localized: "Dark Mode")
+                    Text(localized: Theme.localized.darkMode.localized())
                         .font(Theme.fonts.caption1)
                         .foregroundColor(appManager.theme.color.blackColor)
                 }
             }
             
-            Section(header: Text(localized: "General").font(Theme.fonts.caption3)) {
+            Section(header: Text(localized: Theme.localized.settings.localized()).font(Theme.fonts.caption3)) {
                 Toggle(isOn: $viewModel.notificationsEnabled) {
-                    Text(localized: "Enable Notifications")
+                    Text(localized: Theme.localized.enableNotifications.localized())
                         .font(Theme.fonts.caption1)
                         .foregroundColor(appManager.theme.color.blackColor)
                 }
                 
                 Toggle(isOn: $viewModel.faceIDEnabled) {
-                    Text(localized: "Enable Face ID / Touch ID")
+                    Text(localized: Theme.localized.enableFaceIDOrTouchID.localized())
                         .font(Theme.fonts.caption1)
                         .foregroundColor(appManager.theme.color.blackColor)
                 }
@@ -38,18 +38,18 @@ struct SettingsView: View {
                 Button(action: {
                     router.navigate(to: .changePassword)
                 }) {
-                    Text(localized: "Change Password")
+                    Text(localized: Theme.localized.changePassword.localized())
                         .font(Theme.fonts.caption1)
                         .foregroundColor(appManager.theme.color.blackColor)
                 }
             }
             
-            Section(header: Text(localized: "Support").font(Theme.fonts.caption3)) {
+            Section(header: Text(localized: Theme.localized.support.localized()).font(Theme.fonts.caption3)) {
                 
                 Button(action: {
                     router.navigate(to: .contactUs)
                 }) {
-                    Text(localized: "Contact Us")
+                    Text(localized: Theme.localized.contactUs.localized())
                         .font(Theme.fonts.caption1)
                         .foregroundColor(appManager.theme.color.blackColor)
                 }
@@ -57,7 +57,7 @@ struct SettingsView: View {
                 Button(action: {
                     router.navigate(to: .fAQs)
                 }) {
-                    Text(localized: "FAQs")
+                    Text(localized: Theme.localized.fAQs.localized())
                         .font(Theme.fonts.caption1)
                         .foregroundColor(appManager.theme.color.blackColor)
                 }

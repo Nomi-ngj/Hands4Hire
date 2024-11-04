@@ -42,17 +42,23 @@ enum AppColor:Int{
     }
     
     var primaryColor: Color {
+        return primaryUIColor.toColor
+    }
+    
+    // New computed property for UIColor
+    var primaryUIColor: UIColor {
         switch self {
         case .default:
-            return UIColor(resource: .appPrimary).toColor
+            return UIColor(resource: .appPrimary)
         case .darkMode:
-            return UIColor(resource: .appSecondary).toColor
+            return UIColor(resource: .appSecondary)
         case .blue:
-            return UIColor(resource: .appPrimary).toColor
+            return UIColor(resource: .appPrimary)
         case .green:
-            return UIColor(resource: .appPrimary).toColor
+            return UIColor(resource: .appPrimary)
         }
     }
+    
     var secondaryColor: Color { return UIColor(resource: .appSecondary).toColor }
     var tealColor: Color { return UIColor(resource: .appTeal).toColor }
     var textPrimaryColor: Color { return UIColor(resource: .appTextPrimary).toColor }
@@ -75,15 +81,19 @@ enum AppColor:Int{
         
     }
     var whiteColor: Color {
+        return whiteUIColor.toColor
+    }
+    
+    var whiteUIColor: UIColor {
         switch self {
         case .default:
-            return UIColor(resource: .appWhite).toColor
+            return UIColor(resource: .appWhite)
         case .darkMode:
-            return UIColor(resource: .appBlack).toColor
+            return UIColor(resource: .appBlack)
         case .blue:
-            return UIColor(resource: .appWhite).toColor
+            return UIColor(resource: .appWhite)
         case .green:
-            return UIColor(resource: .appWhite).toColor
+            return UIColor(resource: .appWhite)
         }
         
     }

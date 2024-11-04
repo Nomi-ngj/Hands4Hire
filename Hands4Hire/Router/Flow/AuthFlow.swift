@@ -22,7 +22,7 @@ enum AuthFlow: Hashable, Codable {
             SignUpView(viewModel: .init())
         case .forgotPassword:
             UnderConstructionView()
-                .navigationTitleWithBackButton("Forgot Password")
+                .navigationTitleWithBackButton(Theme.localized.forgotPasswordTitle.localized())
         }
     }
 }

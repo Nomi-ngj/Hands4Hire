@@ -15,6 +15,8 @@ struct DashboardView: View {
             SearchBarView()
                 .padding(.vertical, 20)
             
+            AdvertisementBannersView(allServices: allServices)
+            
             VStack(spacing: 20) {
                 ForEach(HomeSection.allCases, id: \.self) { type in
                     
@@ -36,39 +38,3 @@ struct DashboardView: View {
     DashboardView()
 }
 
-struct AdvertisementView: View {
-    let allServices: [ServiceItem]
-
-    var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(allServices) { service in
-                    AdvertisementCard(service: service)
-                }
-            }
-            .padding()
-        }
-    }
-}
-
-struct AdvertisementCard: View {
-    let service: ServiceItem
-
-    var body: some View {
-        VStack {
-            Image(service.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity)
-                .padding()
-            
-            Text(service.title)
-                .font(.headline)
-                .padding()
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
-    }
-}

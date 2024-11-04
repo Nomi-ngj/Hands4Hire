@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct AppImages {
-    let appLogo = Image("Nouman Gul")
-    let google = Image("google")
-    let facebook = Image("facebook")
-    let apple = Image("apple")
+    let appLogo = Image(.noumanGul)
+    let google = Image(.google)
+    let facebook = Image(.facebook)
+    let apple = Image(.apple)
+    let home = Image(.home)
+    let orders = Image(.orders)
+    let favorites = Image(.favorite)
+    let profile = Image(.profile)
 }

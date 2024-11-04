@@ -43,6 +43,7 @@ struct ServiceItemView: View {
         .padding(.horizontal)
         .background(appManager.theme.color.whiteColor)
         .cornerRadius(10)
+        .shadow(radius: 0.3)
     }
 }
 

@@ -14,7 +14,7 @@ struct LogoutConfirmationPopup: View {
     @EnvironmentObject var router: Router
     var body: some View {
         VStack(spacing: 20) {
-            Text("Are you sure you want to log out?")
+            Text(localized: Theme.localized.areYouSureYouWantTologOut.localized())
                 .font(Theme.fonts.subhead)
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
@@ -23,7 +23,7 @@ struct LogoutConfirmationPopup: View {
                 Button(action: {
                     router.navigateBack()
                 }) {
-                    Text("Cancel")
+                    Text(localized: Theme.localized.cancel.localized())
                         .frame(minWidth: 60)
                         .padding()
                         .font(Theme.fonts.footnote)
@@ -35,7 +35,7 @@ struct LogoutConfirmationPopup: View {
                     router.navigateToRoot()
                     appManager.isUserLoggedIn = false
                 }) {
-                    Text("Log Out")
+                    Text(localized: Theme.localized.logout.localized())
                         .frame(minWidth:60)
                         .padding()
                         .font(Theme.fonts.footnoteMedium)

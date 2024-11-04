@@ -7,17 +7,17 @@
 
 import Foundation
 
-enum MyAccountSection: String, CaseIterable {
-    case profile
-    case notifications
-    case settings
-    case language
-    case aboutFoodApp
-    case termsAndConditions
-    case privacyPolicy
-    case appTips
-    case shareThisApp
-    case delete
-    case logout
-    
-}
+//enum MyAccountSection: String, CaseIterable {
+//    case profile
+//    case notifications
+//    case settings
+//    case language
+//    case aboutFoodApp
+//    case termsAndConditions
+//    case privacyPolicy
+//    case appTips
+//    case shareThisApp
+//    case delete
+//    case logout
+//    
+//}

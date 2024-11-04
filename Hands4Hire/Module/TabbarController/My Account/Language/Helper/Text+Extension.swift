@@ -18,3 +18,25 @@ extension Text {
         self.init(localizedString)
     }
 }
+
+extension View {
+    
+    /// Creates a `TextField` with a localized placeholder.
+    /// - Parameters:
+    ///   - key: The localization key for the placeholder string.
+    ///   - text: A binding to the text the user edits.
+    func localizedTextField(_ key: String, text: Binding<String>) -> some View {
+        let placeholder = Bundle.localizedString(forKey: key, value: nil, table: nil)
+        return TextField(placeholder, text: text)
+    }
+    
+    /// Creates a `SecureField` with a localized placeholder.
+    /// - Parameters:
+    ///   - key: The localization key for the placeholder string.
+    ///   - text: A binding to the secure text the user edits.
+    func localizedSecureField(_ key: String, text: Binding<String>) -> some View {
+        let localizedPlaceholder = Text(Bundle.localizedString(forKey: key, value: nil, table: nil))
+        return SecureField("", text: text, prompt: localizedPlaceholder)
+    }
+}
+

@@ -10,11 +10,12 @@ import SwiftUI
 struct ContactUsView: View {
     var body: some View {
         Form {
-            Section(header: Text("Contact Us").font(Theme.fonts.caption3)) {
-                Text("For support, please email us at support@example.com").font(Theme.fonts.caption1)
+            VStack {
+                Text(localized: Theme.localized.contactUsDetail1.localized()).font(Theme.fonts.caption1)
             }
         }
-        .navigationTitleWithBackButton("Contact Us")
+        .background(.clear)
+        .navigationTitleWithBackButton(Theme.localized.contactUs.localized())
     }
 }
 

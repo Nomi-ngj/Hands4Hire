@@ -24,12 +24,12 @@ struct ProfileView: View {
     
     var body: some View {
         Form {
-            Section(header: Text(Theme.localized.profilePicture)
+            Section(header: Text(localized: Theme.localized.profilePicture.localized())
                 .font(Theme.fonts.caption3)) {
                     ProfileImage(urlString: viewModel.user.profilePictureURL)
                 }
             
-            Section(header: Text(Theme.localized.accountInformation)
+            Section(header: Text(localized:Theme.localized.accountInformation.localized())
                 .font(Theme.fonts.caption3)) {
                     Text(viewModel.user.username)
                         .font(Theme.fonts.caption2)

@@ -19,6 +19,7 @@ struct LocalizedConstants {
     let login = "Login"
     let signUp = "Sign Up"
     let forgotPassword = "Forgot Password?"
+    let forgotPasswordTitle = "Forgot Password"
     let skipAndContinueAsaGuest = "Skip & Continue as a guest"
     
     //Sign Up
@@ -47,5 +48,33 @@ struct LocalizedConstants {
     //Profile
     let profilePicture = "Profile Picture"
     let accountInformation = "Account Information"
+    
+    //Settings
+    let appearance = "Appearance"
+    let darkMode = "Dark Mode"
+    let general = "General"
+    let enableNotifications = "Enable Notifications"
+    let enableFaceIDOrTouchID = "Enable Face ID / Touch ID"
+    let support = "Support"
+    let contactUs = "Contact Us"
+    let fAQs = "FAQs"
+    
+    //FAQ
+    let fAQsQuestion1 = "Q: How do I reset my password?\nA: You can reset your password from the settings menu."
+    let fAQsQuestion2 = "Q: How do I reset my password?\nA: You can reset your password from the settings menu."
+    
+    let contactUsDetail1 = "For support, please email us at support@example.com"
+    
+    
+    //Logout
+    let areYouSureYouWantTologOut = "Are you sure you want to log out?"
+    let cancel = "Cancel"
+    
+    //Change Password
+    let changePassword = "Change Password"
+    let currentPassword = "Current Password"
+    let newPassword = "New Password"
+    let confirmNewPassword = "Confirm New Password"
+    
     
 }

@@ -68,7 +68,7 @@ struct TabBarController: View {
                                 }
                             }
                             
-                            Image(tab.viewType.imageNameActive, bundle: .main)
+                            tab.viewType.imageActive
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 25, alignment: .center)

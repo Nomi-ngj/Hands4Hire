@@ -26,6 +26,7 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
             UsersListView()
         case .profile:
             MyAccountView()
+                .navigationTitleWithBackButton(title.localized())
         }
     }
     
@@ -38,33 +39,33 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
         case .favorites:
             return Theme.localized.myFavorites.localized()
         case .profile:
-            return Theme.localized.myAccount.localized()
+            return Theme.localized.myAccount
         }
     }
     
-    var imageNameActive:String{
+    var imageActive:Image{
         switch self {
         case .home:
-            return "home"
+            return Theme.images.home
         case .orders:
-            return "orders"
+            return Theme.images.orders
         case .favorites:
-            return "favorite"
+            return Theme.images.favorites
         case .profile:
-            return "profile"
+            return Theme.images.profile
         }
     }
     
-    var imageNameInactive:String{
+    var imageInactive:Image{
         switch self {
         case .home:
-            return "home"
+            return Theme.images.home
         case .orders:
-            return "orders"
+            return Theme.images.orders
         case .favorites:
-            return "favorite"
+            return Theme.images.favorites
         case .profile:
-            return "profile"
+            return Theme.images.profile
         }
     }
 }

@@ -36,6 +36,8 @@
 		8C7BC9DD2CD2947F00B951AF /* MyAccountFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9DC2CD2947F00B951AF /* MyAccountFlow.swift */; };
 		8C7BC9DF2CD297A100B951AF /* LogoutConfirmationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9DE2CD297A100B951AF /* LogoutConfirmationPopup.swift */; };
 		8C7BC9E12CD2A07A00B951AF /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9E02CD2A07A00B951AF /* SettingsFlow.swift */; };
+		8C7BCA112CD962C200B951AF /* AdvertisementBannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BCA102CD962C200B951AF /* AdvertisementBannersView.swift */; };
+		8C7BCA132CD962F200B951AF /* AdvertisementBannerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BCA122CD962F200B951AF /* AdvertisementBannerCard.swift */; };
 		8CB726AF2C8D86D200E107EF /* Hands4HireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB726AE2C8D86D200E107EF /* Hands4HireApp.swift */; };
 		8CB726B32C8D86D400E107EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB726B22C8D86D400E107EF /* Assets.xcassets */; };
 		8CB726B62C8D86D400E107EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB726B52C8D86D400E107EF /* Preview Assets.xcassets */; };
@@ -124,6 +126,8 @@
 		8C7BC9DC2CD2947F00B951AF /* MyAccountFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountFlow.swift; sourceTree = "<group>"; };
 		8C7BC9DE2CD297A100B951AF /* LogoutConfirmationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutConfirmationPopup.swift; sourceTree = "<group>"; };
 		8C7BC9E02CD2A07A00B951AF /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
+		8C7BCA102CD962C200B951AF /* AdvertisementBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementBannersView.swift; sourceTree = "<group>"; };
+		8C7BCA122CD962F200B951AF /* AdvertisementBannerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementBannerCard.swift; sourceTree = "<group>"; };
 		8CB726AB2C8D86D200E107EF /* Hands4Hire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hands4Hire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB726AE2C8D86D200E107EF /* Hands4HireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hands4HireApp.swift; sourceTree = "<group>"; };
 		8CB726B22C8D86D400E107EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		8C7BC9702CBEFD7800B951AF /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				8C7BCA142CD9632000B951AF /* Banner */,
 				8C7BC9B92CC43DA900B951AF /* Reviews */,
 				8C7BC9AE2CC4384A00B951AF /* Service Providers */,
 				8C7BC9AD2CC437F800B951AF /* Services */,
@@ -291,6 +296,15 @@
 				8C7BC9D52CD2940700B951AF /* ServicesFlow.swift */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		8C7BCA142CD9632000B951AF /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				8C7BCA102CD962C200B951AF /* AdvertisementBannersView.swift */,
+				8C7BCA122CD962F200B951AF /* AdvertisementBannerCard.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		8CB726A22C8D86D200E107EF = {
@@ -631,11 +645,13 @@
 				8C7BC97C2CBF0C5F00B951AF /* ServiceSectionView.swift in Sources */,
 				8CB726C32C93300800E107EF /* LoginView.swift in Sources */,
 				8CB727872C93538A00E107EF /* Job.swift in Sources */,
+				8C7BCA132CD962F200B951AF /* AdvertisementBannerCard.swift in Sources */,
 				8C7BC9762CBF0C2900B951AF /* ServiceItem.swift in Sources */,
 				8CB727532C93480D00E107EF /* LocalizedConstants.swift in Sources */,
 				8CB727542C93480D00E107EF /* SessionManager.swift in Sources */,
 				8CB727512C93480D00E107EF /* AppImages.swift in Sources */,
 				8C7BC9DD2CD2947F00B951AF /* MyAccountFlow.swift in Sources */,
+				8C7BCA112CD962C200B951AF /* AdvertisementBannersView.swift in Sources */,
 				8C7BC9DA2CD2943000B951AF /* TabBarFlow.swift in Sources */,
 				8C7BC9CE2CCC371C00B951AF /* String+Localizable.swift in Sources */,
 				8C7BC9802CBF0C7900B951AF /* SectionHeaderView.swift in Sources */,

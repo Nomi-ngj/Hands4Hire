@@ -14,17 +14,21 @@ struct ChangePasswordView: View {
     @EnvironmentObject var appManager: AppContainerManager
     @EnvironmentObject var router: Router
     var body: some View {
+        let changePassword = Theme.localized.currentPassword.localized()
         VStack{
-            Form {
-                Section(header: Text("Change Password").font(Theme.fonts.caption3)) {
-                    SecureField("Current Password", text: $currentPassword)
-                        .font(Theme.fonts.caption1)
-                    SecureField("New Password", text: $newPassword)
-                        .font(Theme.fonts.caption1)
-                    SecureField("Confirm New Password", text: $confirmPassword)
-                        .font(Theme.fonts.caption1)
-                }
+            VStack{
+                
+                self.localizedSecureField(Theme.localized.currentPassword.localized(), text: $currentPassword)
+                    .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
+                
+                
+                self.localizedSecureField(Theme.localized.newPassword.localized(), text: $newPassword)
+                    .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
+                
+                self.localizedSecureField(Theme.localized.confirmNewPassword.localized(), text: $confirmPassword)
+                    .customTextFieldStyle(backgroundColor: Color.clear, borderStrokeColor: appManager.theme.color.primaryColor)
             }
+            .padding()
             
             Spacer()
             
@@ -32,7 +36,7 @@ struct ChangePasswordView: View {
                 // Handle change password action
                 router.navigateBack()
             }) {
-                Text("Change Password")
+                Text(localized:changePassword)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .foregroundColor(appManager.theme.color.whiteColor)
                     .font(Theme.fonts.caption1)
@@ -45,8 +49,7 @@ struct ChangePasswordView: View {
             Spacer()
             Spacer()
         }
-        
-        .navigationTitleWithBackButton("Change Password")
+        .navigationTitleWithBackButton(changePassword)
     }
 }
 
