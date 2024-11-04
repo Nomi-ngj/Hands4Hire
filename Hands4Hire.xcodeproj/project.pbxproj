@@ -75,7 +75,6 @@
 		8CB7276A2C93480D00E107EF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7273F2C93480D00E107EF /* SettingsView.swift */; };
 		8CB7276B2C93480D00E107EF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727402C93480D00E107EF /* SettingsViewModel.swift */; };
 		8CB7276C2C93480D00E107EF /* UnderConstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727422C93480D00E107EF /* UnderConstructionView.swift */; };
-		8CB7276D2C93480D00E107EF /* MyAccountSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727442C93480D00E107EF /* MyAccountSection.swift */; };
 		8CB7276E2C93480D00E107EF /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727452C93480D00E107EF /* MyAccountView.swift */; };
 		8CB7276F2C93480D00E107EF /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727462C93480D00E107EF /* MyAccountViewModel.swift */; };
 		8CB727702C93480D00E107EF /* ElevationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB727482C93480D00E107EF /* ElevationModifier.swift */; };
@@ -164,7 +163,6 @@
 		8CB7273F2C93480D00E107EF /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8CB727402C93480D00E107EF /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8CB727422C93480D00E107EF /* UnderConstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderConstructionView.swift; sourceTree = "<group>"; };
-		8CB727442C93480D00E107EF /* MyAccountSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountSection.swift; sourceTree = "<group>"; };
 		8CB727452C93480D00E107EF /* MyAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
 		8CB727462C93480D00E107EF /* MyAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewModel.swift; sourceTree = "<group>"; };
 		8CB727482C93480D00E107EF /* ElevationModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevationModifier.swift; sourceTree = "<group>"; };
@@ -474,7 +472,6 @@
 				8CB727382C93480D00E107EF /* Profile */,
 				8CB727412C93480D00E107EF /* Settings */,
 				8CB727432C93480D00E107EF /* UnderConstruction */,
-				8CB727442C93480D00E107EF /* MyAccountSection.swift */,
 				8CB727452C93480D00E107EF /* MyAccountView.swift */,
 				8C7BC9DE2CD297A100B951AF /* LogoutConfirmationPopup.swift */,
 				8CB727462C93480D00E107EF /* MyAccountViewModel.swift */,
@@ -694,7 +691,6 @@
 				8CB7276A2C93480D00E107EF /* SettingsView.swift in Sources */,
 				8CB726AF2C8D86D200E107EF /* Hands4HireApp.swift in Sources */,
 				8C7BC9BD2CC43DD200B951AF /* ReviewsListView.swift in Sources */,
-				8CB7276D2C93480D00E107EF /* MyAccountSection.swift in Sources */,
 				8C7BC9B82CC4398E00B951AF /* ServiceDetailView.swift in Sources */,
 				8CB727662C93480D00E107EF /* User.swift in Sources */,
 				8CB727642C93480D00E107EF /* ProfileImage.swift in Sources */,
