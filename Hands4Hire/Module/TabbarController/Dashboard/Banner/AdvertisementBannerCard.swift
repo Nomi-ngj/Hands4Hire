@@ -19,13 +19,13 @@ struct AdvertisementBannerCard: View {
                 .clipped()
 
             // Overlay the title in the middle
-            Text(service.title) // Ensure that service.title is defined in ServiceItem
+            Text(localized: service.title.localized()) // Ensure that service.title is defined in ServiceItem
                 .font(.headline)
                 .foregroundColor(appManager.theme.color.whiteColor) // Adjust color as needed
                 .padding()
                 .background(appManager.theme.color.blackColor.opacity(0.5)) // Optional: Background for better readability
                 .cornerRadius(5)
-                .padding(10)
+                .padding(14)
         }
         .background(Color.clear)
         .cornerRadius(10)

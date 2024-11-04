@@ -33,6 +33,7 @@ struct LogoutConfirmationPopup: View {
                 
                 Button(action: {
                     router.navigateToRoot()
+                    Theme.sessionManager.clearSession()
                     appManager.isUserLoggedIn = false
                 }) {
                     Text(localized: Theme.localized.logout.localized())
