@@ -36,8 +36,9 @@ enum AppColor:Int{
         
         UserDefaults.standard.set(rawValue, forKey: Keys.selectedTheme)
         UserDefaults.standard.synchronize()
-        
-        UIApplication.shared.delegate?.window??.tintColor = UIColor(resource: .appPrimary)
+        DispatchQueue.main.async {
+            UIApplication.shared.delegate?.window??.tintColor = UIColor(resource: .appPrimary)
+        }
         NotificationCenter.default.post(name: .themeChanged, object: nil)
     }
     

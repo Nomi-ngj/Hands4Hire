@@ -22,6 +22,7 @@ class AppContainerManager: ObservableObject {
     
     init(isDarkMode: Bool, isUserLoggedIn: Bool) {
         self.isDarkMode = isDarkMode
+        self.isUserLoggedIn = isUserLoggedIn
         theme.setTheme(isDarkMode ? .darkMode:.default)
     }
     

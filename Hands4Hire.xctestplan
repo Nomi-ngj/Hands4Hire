@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "A48C84BD-9EB6-4A2C-8F8A-6E540C6B9687",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Hands4Hire.xcodeproj",
+      "identifier" : "8CB726AA2C8D86D200E107EF",
+      "name" : "Hands4Hire"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Hands4Hire.xcodeproj",
+        "identifier" : "8C54ECE02CDA9AD7000CA68F",
+        "name" : "Hands4HireTests"
+      }
+    }
+  ],
+  "version" : 1
+}

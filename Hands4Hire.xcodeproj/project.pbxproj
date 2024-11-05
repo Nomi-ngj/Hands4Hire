@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -95,7 +95,19 @@
 		8CB7279C2C957F2400E107EF /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB7279B2C957F2400E107EF /* FacebookLogin */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8C54ECE52CDA9AD7000CA68F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CB726A32C8D86D200E107EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CB726AA2C8D86D200E107EF;
+			remoteInfo = Hands4Hire;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		8C54ECE12CDA9AD7000CA68F /* Hands4HireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hands4HireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C54ECF22CDAAB23000CA68F /* Hands4Hire.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Hands4Hire.xctestplan; sourceTree = "<group>"; };
 		8C7BC9712CBEFDA000B951AF /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		8C7BC9732CBF0C0100B951AF /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		8C7BC9752CBF0C2900B951AF /* ServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItem.swift; sourceTree = "<group>"; };
@@ -178,7 +190,18 @@
 		8CB7278C2C93546600E107EF /* ServicesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8C54ECE22CDA9AD7000CA68F /* Hands4HireTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Hands4HireTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		8C54ECDE2CDA9AD7000CA68F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CB726A82C8D86D200E107EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,7 +331,9 @@
 		8CB726A22C8D86D200E107EF = {
 			isa = PBXGroup;
 			children = (
+				8C54ECF22CDAAB23000CA68F /* Hands4Hire.xctestplan */,
 				8CB726AD2C8D86D200E107EF /* Hands4Hire */,
+				8C54ECE22CDA9AD7000CA68F /* Hands4HireTests */,
 				8CB726AC2C8D86D200E107EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -317,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				8CB726AB2C8D86D200E107EF /* Hands4Hire.app */,
+				8C54ECE12CDA9AD7000CA68F /* Hands4HireTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -542,6 +568,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8C54ECE02CDA9AD7000CA68F /* Hands4HireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C54ECE92CDA9AD7000CA68F /* Build configuration list for PBXNativeTarget "Hands4HireTests" */;
+			buildPhases = (
+				8C54ECDD2CDA9AD7000CA68F /* Sources */,
+				8C54ECDE2CDA9AD7000CA68F /* Frameworks */,
+				8C54ECDF2CDA9AD7000CA68F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C54ECE62CDA9AD7000CA68F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8C54ECE22CDA9AD7000CA68F /* Hands4HireTests */,
+			);
+			name = Hands4HireTests;
+			packageProductDependencies = (
+			);
+			productName = Hands4HireTests;
+			productReference = 8C54ECE12CDA9AD7000CA68F /* Hands4HireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8CB726AA2C8D86D200E107EF /* Hands4Hire */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CB726B92C8D86D400E107EF /* Build configuration list for PBXNativeTarget "Hands4Hire" */;
@@ -576,9 +625,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					8C54ECE02CDA9AD7000CA68F = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8CB726AA2C8D86D200E107EF;
+					};
 					8CB726AA2C8D86D200E107EF = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -606,11 +659,19 @@
 			projectRoot = "";
 			targets = (
 				8CB726AA2C8D86D200E107EF /* Hands4Hire */,
+				8C54ECE02CDA9AD7000CA68F /* Hands4HireTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8C54ECDF2CDA9AD7000CA68F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CB726A92C8D86D200E107EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,6 +692,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8C54ECDD2CDA9AD7000CA68F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CB726A72C8D86D200E107EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -708,12 +776,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8C54ECE62CDA9AD7000CA68F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CB726AA2C8D86D200E107EF /* Hands4Hire */;
+			targetProxy = 8C54ECE52CDA9AD7000CA68F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8C54ECE72CDA9AD7000CA68F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NGiDeveloper.Hands4HireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hands4Hire.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hands4Hire";
+			};
+			name = Debug;
+		};
+		8C54ECE82CDA9AD7000CA68F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NGiDeveloper.Hands4HireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hands4Hire.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hands4Hire";
+			};
+			name = Release;
+		};
 		8CB726B72C8D86D400E107EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -778,6 +891,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -895,6 +1009,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8C54ECE92CDA9AD7000CA68F /* Build configuration list for PBXNativeTarget "Hands4HireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C54ECE72CDA9AD7000CA68F /* Debug */,
+				8C54ECE82CDA9AD7000CA68F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8CB726A62C8D86D200E107EF /* Build configuration list for PBXProject "Hands4Hire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

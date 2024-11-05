@@ -34,30 +34,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct Hands4HireApp: App {
     
     @State private var showSplash = true
-    @ObservedObject private var appManager:AppContainerManager = AppContainerManager(isDarkMode: Theme.sessionManager.isDarkModeEnabled, isUserLoggedIn: Theme.sessionManager.isUserLoggedIn)
+    @ObservedObject var appManager:AppContainerManager = AppContainerManager(isDarkMode: Theme.sessionManager.isDarkModeEnabled, isUserLoggedIn: Theme.sessionManager.isUserLoggedIn)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @ObservedObject var router = Router()
     var body: some Scene {
         WindowGroup {
             ZStack {
                 if showSplash {
-                    SplashScreenView(showSplash: $showSplash)
+                    SplashScreenView(showSplash: $showSplash, viewModel: .init())
                         .environmentObject(appManager)
                 } else {
                     NavigationStack(path: $router.navPath) {
                         if appManager.isUserLoggedIn {
-                            TabBarController(tabs: TabBarFlow.allCases.map { viewType in
-                                TabBarController.TabItem(viewType: viewType)
-                            })
-                            .navigationDestination(for: ServicesFlow.self) { destination in
-                                destination.view
-                            }
-                            .navigationDestination(for: MyAccountFlow.self) { destination in
-                                destination.view
-                            }
-                            .navigationDestination(for: SettingsFlow.self) { destination in
-                                destination.view
-                            }
+                            mainTabBarView
                         }else {
                             LoginView()
                                 .navigationDestination(for: AuthFlow.self) { destination in
@@ -74,6 +63,21 @@ struct Hands4HireApp: App {
                 appManager.isUserLoggedIn = Theme.sessionManager.isUserLoggedIn
                 //                 FirestoreSeeder.init().seedData()
             }
+        }
+    }
+    
+    private var mainTabBarView: some View {
+        TabBarController(tabs: TabBarFlow.allCases.map { viewType in
+            TabBarController.TabItem(viewType: viewType)
+        })
+        .navigationDestination(for: ServicesFlow.self) { destination in
+            destination.view
+        }
+        .navigationDestination(for: MyAccountFlow.self) { destination in
+            destination.view
+        }
+        .navigationDestination(for: SettingsFlow.self) { destination in
+            destination.view
         }
     }
 }
