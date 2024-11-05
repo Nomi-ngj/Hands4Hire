@@ -26,7 +26,7 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
             UsersListView()
         case .profile:
             MyAccountView()
-                .navigationTitleWithBackButton(title.localized())
+                .navigationTitle(title.localized())
         }
     }
     
