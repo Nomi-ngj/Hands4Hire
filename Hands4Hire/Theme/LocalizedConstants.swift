@@ -43,6 +43,7 @@ struct LocalizedConstants {
     let myAccount = "My Account"
     let home = "Home"
     let myOrders = "My Orders"
+    let booking = "Booking"
     let myFavorites = "My Favorites"
     
     //Profile

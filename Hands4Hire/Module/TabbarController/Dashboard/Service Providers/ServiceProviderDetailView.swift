@@ -50,6 +50,7 @@ struct ServiceProviderDetailView: View {
                  
                     Button {
                         //Booking Route
+                        router.navigate(to: .createBooking(serviceProvider: self.provider))
                     } label: {
                         HStack {
                             Text("Book Now")

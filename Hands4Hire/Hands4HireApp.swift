@@ -79,5 +79,8 @@ struct Hands4HireApp: App {
         .navigationDestination(for: SettingsFlow.self) { destination in
             destination.view
         }
+        .navigationDestination(for: BookingFlow.self) { destination in
+            destination.view
+        }
     }
 }

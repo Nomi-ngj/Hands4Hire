@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C54ED1A2CE0C5B2000CA68F /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED192CE0C5AC000CA68F /* BookingView.swift */; };
+		8C54ED1E2CE0D40C000CA68F /* DateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED1D2CE0D40C000CA68F /* DateSelectionView.swift */; };
+		8C54ED202CE0D41B000CA68F /* ServicesSelectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED1F2CE0D41B000CA68F /* ServicesSelectionSheet.swift */; };
+		8C54ED222CE0D47C000CA68F /* TimeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED212CE0D47C000CA68F /* TimeSelectionView.swift */; };
+		8C54ED242CE0DB74000CA68F /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED232CE0DB74000CA68F /* BookingViewModel.swift */; };
+		8C54ED262CE0E2D3000CA68F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED252CE0E2D3000CA68F /* LoadingView.swift */; };
+		8C54ED282CE0E761000CA68F /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED272CE0E761000CA68F /* DashboardViewModel.swift */; };
+		8C54ED2A2CE0F5D1000CA68F /* ServicesProviderSelectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED292CE0F5D1000CA68F /* ServicesProviderSelectionSheet.swift */; };
+		8C54ED2C2CE1361B000CA68F /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED2B2CE1361B000CA68F /* LocationSelectionView.swift */; };
+		8C54ED2E2CE146FF000CA68F /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED2D2CE146FF000CA68F /* MapPinView.swift */; };
+		8C54ED312CE14EF1000CA68F /* BookingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED302CE14EED000CA68F /* BookingFlow.swift */; };
+		8C54ED332CE27707000CA68F /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED322CE27707000CA68F /* CustomAlertView.swift */; };
+		8C54ED352CE27C7F000CA68F /* AlertParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED342CE27C7F000CA68F /* AlertParams.swift */; };
+		8C54ED3D2CE3EB1A000CA68F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED3C2CE3EB1A000CA68F /* ToastView.swift */; };
 		8C7BC9722CBEFDA000B951AF /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9712CBEFDA000B951AF /* DashboardView.swift */; };
 		8C7BC9742CBF0C0100B951AF /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9732CBF0C0100B951AF /* HomeSection.swift */; };
 		8C7BC9762CBF0C2900B951AF /* ServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9752CBF0C2900B951AF /* ServiceItem.swift */; };
@@ -108,6 +122,20 @@
 /* Begin PBXFileReference section */
 		8C54ECE12CDA9AD7000CA68F /* Hands4HireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hands4HireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C54ECF22CDAAB23000CA68F /* Hands4Hire.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Hands4Hire.xctestplan; sourceTree = "<group>"; };
+		8C54ED192CE0C5AC000CA68F /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		8C54ED1D2CE0D40C000CA68F /* DateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionView.swift; sourceTree = "<group>"; };
+		8C54ED1F2CE0D41B000CA68F /* ServicesSelectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesSelectionSheet.swift; sourceTree = "<group>"; };
+		8C54ED212CE0D47C000CA68F /* TimeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectionView.swift; sourceTree = "<group>"; };
+		8C54ED232CE0DB74000CA68F /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		8C54ED252CE0E2D3000CA68F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8C54ED272CE0E761000CA68F /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		8C54ED292CE0F5D1000CA68F /* ServicesProviderSelectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProviderSelectionSheet.swift; sourceTree = "<group>"; };
+		8C54ED2B2CE1361B000CA68F /* LocationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionView.swift; sourceTree = "<group>"; };
+		8C54ED2D2CE146FF000CA68F /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
+		8C54ED302CE14EED000CA68F /* BookingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFlow.swift; sourceTree = "<group>"; };
+		8C54ED322CE27707000CA68F /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		8C54ED342CE27C7F000CA68F /* AlertParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertParams.swift; sourceTree = "<group>"; };
+		8C54ED3C2CE3EB1A000CA68F /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		8C7BC9712CBEFDA000B951AF /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		8C7BC9732CBF0C0100B951AF /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		8C7BC9752CBF0C2900B951AF /* ServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItem.swift; sourceTree = "<group>"; };
@@ -220,6 +248,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C54ED182CE0C5A3000CA68F /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				8C54ED342CE27C7F000CA68F /* AlertParams.swift */,
+				8C54ED192CE0C5AC000CA68F /* BookingView.swift */,
+				8C54ED232CE0DB74000CA68F /* BookingViewModel.swift */,
+				8C54ED322CE27707000CA68F /* CustomAlertView.swift */,
+				8C54ED1D2CE0D40C000CA68F /* DateSelectionView.swift */,
+				8C54ED252CE0E2D3000CA68F /* LoadingView.swift */,
+				8C54ED292CE0F5D1000CA68F /* ServicesProviderSelectionSheet.swift */,
+				8C54ED1F2CE0D41B000CA68F /* ServicesSelectionSheet.swift */,
+				8C54ED212CE0D47C000CA68F /* TimeSelectionView.swift */,
+				8C54ED3C2CE3EB1A000CA68F /* ToastView.swift */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		8C54ED2F2CE1470A000CA68F /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				8C54ED2B2CE1361B000CA68F /* LocationSelectionView.swift */,
+				8C54ED2D2CE146FF000CA68F /* MapPinView.swift */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
 		8C7BC9702CBEFD7800B951AF /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +282,7 @@
 				8C7BC9AE2CC4384A00B951AF /* Service Providers */,
 				8C7BC9AD2CC437F800B951AF /* Services */,
 				8C7BC9712CBEFDA000B951AF /* DashboardView.swift */,
+				8C54ED272CE0E761000CA68F /* DashboardViewModel.swift */,
 				8C7BC9772CBF0C4100B951AF /* SearchBarView.swift */,
 				8C7BC9732CBF0C0100B951AF /* HomeSection.swift */,
 			);
@@ -310,6 +365,7 @@
 		8C7BC9DB2CD2944400B951AF /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				8C54ED302CE14EED000CA68F /* BookingFlow.swift */,
 				8C7BC9D92CD2943000B951AF /* TabBarFlow.swift */,
 				8C7BC9D72CD2941E00B951AF /* AuthFlow.swift */,
 				8C7BC9E02CD2A07A00B951AF /* SettingsFlow.swift */,
@@ -516,6 +572,8 @@
 		8CB7274F2C93480D00E107EF /* TabbarController */ = {
 			isa = PBXGroup;
 			children = (
+				8C54ED2F2CE1470A000CA68F /* Addresses */,
+				8C54ED182CE0C5A3000CA68F /* Booking */,
 				8C7BC9702CBEFD7800B951AF /* Dashboard */,
 				8CB727472C93480D00E107EF /* My Account */,
 				8CB7274E2C93480D00E107EF /* Tabbar */,
@@ -703,11 +761,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C54ED312CE14EF1000CA68F /* BookingFlow.swift in Sources */,
 				8CB727702C93480D00E107EF /* ElevationModifier.swift in Sources */,
 				8CB727892C93539F00E107EF /* Service.swift in Sources */,
 				8CB727622C93480D00E107EF /* CustomBackButtonModifier.swift in Sources */,
 				8CB7276F2C93480D00E107EF /* MyAccountViewModel.swift in Sources */,
 				8C7BC97C2CBF0C5F00B951AF /* ServiceSectionView.swift in Sources */,
+				8C54ED262CE0E2D3000CA68F /* LoadingView.swift in Sources */,
 				8CB726C32C93300800E107EF /* LoginView.swift in Sources */,
 				8CB727872C93538A00E107EF /* Job.swift in Sources */,
 				8C7BCA132CD962F200B951AF /* AdvertisementBannerCard.swift in Sources */,
@@ -719,22 +779,30 @@
 				8C7BCA112CD962C200B951AF /* AdvertisementBannersView.swift in Sources */,
 				8C7BC9DA2CD2943000B951AF /* TabBarFlow.swift in Sources */,
 				8C7BC9CE2CCC371C00B951AF /* String+Localizable.swift in Sources */,
+				8C54ED242CE0DB74000CA68F /* BookingViewModel.swift in Sources */,
 				8C7BC9802CBF0C7900B951AF /* SectionHeaderView.swift in Sources */,
 				8CB7275A2C93480D00E107EF /* SignUpViewModel.swift in Sources */,
 				8C7BC9D02CCC4B9200B951AF /* Bundle+Ext.swift in Sources */,
 				8CB727832C93532B00E107EF /* UserFirebase.swift in Sources */,
 				8CB727552C93480D00E107EF /* Theme.swift in Sources */,
+				8C54ED3D2CE3EB1A000CA68F /* ToastView.swift in Sources */,
+				8C54ED352CE27C7F000CA68F /* AlertParams.swift in Sources */,
 				8CB7276C2C93480D00E107EF /* UnderConstructionView.swift in Sources */,
 				8C7BC9B02CC4387300B951AF /* ServiceProvider.swift in Sources */,
 				8C7BC9D82CD2941E00B951AF /* AuthFlow.swift in Sources */,
 				8C7BC9E12CD2A07A00B951AF /* SettingsFlow.swift in Sources */,
+				8C54ED2C2CE1361B000CA68F /* LocationSelectionView.swift in Sources */,
 				8CB727612C93480D00E107EF /* Color+Hex.swift in Sources */,
+				8C54ED332CE27707000CA68F /* CustomAlertView.swift in Sources */,
+				8C54ED202CE0D41B000CA68F /* ServicesSelectionSheet.swift in Sources */,
 				8CB727802C934F3C00E107EF /* UsersListView.swift in Sources */,
+				8C54ED1A2CE0C5B2000CA68F /* BookingView.swift in Sources */,
 				8CB727502C93480D00E107EF /* AppColor.swift in Sources */,
 				8CB727562C93480D00E107EF /* BorderedButtonStyle.swift in Sources */,
 				8CB727852C93536100E107EF /* Review.swift in Sources */,
 				8C7BC9C52CCC108800B951AF /* LocalizationManager.swift in Sources */,
 				8CB7277B2C934E2B00E107EF /* FirestoreSeeder.swift in Sources */,
+				8C54ED1E2CE0D40C000CA68F /* DateSelectionView.swift in Sources */,
 				8CB726C72C93311A00E107EF /* FirestoreManager.swift in Sources */,
 				8CB727672C93480D00E107EF /* ChangePasswordView.swift in Sources */,
 				8C7BC9C72CCC10AE00B951AF /* AppLanguage.swift in Sources */,
@@ -747,8 +815,10 @@
 				8C7BC9D32CCE3EAE00B951AF /* Router.swift in Sources */,
 				8C7BC9BF2CC83A4300B951AF /* TextFieldModifier.swift in Sources */,
 				8CB727592C93480D00E107EF /* SignUpView.swift in Sources */,
+				8C54ED2A2CE0F5D1000CA68F /* ServicesProviderSelectionSheet.swift in Sources */,
 				8C7BC9B42CC4389100B951AF /* ServiceProviderServiceItemView.swift in Sources */,
 				8C7BC9D62CD2940700B951AF /* ServicesFlow.swift in Sources */,
+				8C54ED282CE0E761000CA68F /* DashboardViewModel.swift in Sources */,
 				8C7BC9722CBEFDA000B951AF /* DashboardView.swift in Sources */,
 				8CB727652C93480D00E107EF /* ProfileView.swift in Sources */,
 				8CB727682C93480D00E107EF /* ContactUsView.swift in Sources */,
@@ -764,9 +834,11 @@
 				8CB727642C93480D00E107EF /* ProfileImage.swift in Sources */,
 				8CB7276E2C93480D00E107EF /* MyAccountView.swift in Sources */,
 				8CB727732C93480D00E107EF /* TabBarController.swift in Sources */,
+				8C54ED2E2CE146FF000CA68F /* MapPinView.swift in Sources */,
 				8C7BC9B62CC4398100B951AF /* ServiceProviderView.swift in Sources */,
 				8C7BC9B22CC4388400B951AF /* ServiceProviderDetailView.swift in Sources */,
 				8CB727692C93480D00E107EF /* FAQsView.swift in Sources */,
+				8C54ED222CE0D47C000CA68F /* TimeSelectionView.swift in Sources */,
 				8C7BC9742CBF0C0100B951AF /* HomeSection.swift in Sources */,
 				8C7BC9CC2CCC1A3600B951AF /* Text+Extension.swift in Sources */,
 				8C7BC9782CBF0C4100B951AF /* SearchBarView.swift in Sources */,

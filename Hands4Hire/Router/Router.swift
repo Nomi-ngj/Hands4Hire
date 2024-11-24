@@ -26,6 +26,10 @@ final class Router: ObservableObject {
         navPath.append(destination)
     }
     
+    func navigate(to destination: BookingFlow) {
+        destinations.append(destination)
+        navPath.append(destination)
+    }
     func navigate(to destination: TabBarFlow) {
         destinations.append(destination)
         navPath.append(destination)

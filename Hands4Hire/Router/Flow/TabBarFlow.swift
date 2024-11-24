@@ -10,7 +10,7 @@ import SwiftUI
 
 enum TabBarFlow: Hashable, Codable, CaseIterable {
     case home
-    case orders
+    case booking
     case favorites
     case profile
     
@@ -20,8 +20,8 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
         case .home:
             DashboardView()
                 .navigationTitle(Theme.localized.appName)
-        case .orders:
-            ServicesListView()
+        case .booking:
+            BookingView(viewModel: .init())
         case .favorites:
             UsersListView()
         case .profile:
@@ -30,12 +30,12 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
         }
     }
     
-    var title:String {
+    var title: String {
         switch self {
         case .home:
             return Theme.localized.home.localized()
-        case .orders:
-            return Theme.localized.myOrders.localized()
+        case .booking:
+            return Theme.localized.booking.localized()
         case .favorites:
             return Theme.localized.myFavorites.localized()
         case .profile:
@@ -43,11 +43,11 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
         }
     }
     
-    var imageActive:Image{
+    var imageActive: Image {
         switch self {
         case .home:
             return Theme.images.home
-        case .orders:
+        case .booking:
             return Theme.images.orders
         case .favorites:
             return Theme.images.favorites
@@ -56,11 +56,11 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
         }
     }
     
-    var imageInactive:Image{
+    var imageInactive: Image {
         switch self {
         case .home:
             return Theme.images.home
-        case .orders:
+        case .booking:
             return Theme.images.orders
         case .favorites:
             return Theme.images.favorites
@@ -69,3 +69,4 @@ enum TabBarFlow: Hashable, Codable, CaseIterable {
         }
     }
 }
+

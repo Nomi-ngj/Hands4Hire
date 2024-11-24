@@ -28,6 +28,7 @@ struct CustomBackButtonModifier: ViewModifier {
                     .foregroundColor(appManager.theme.color.blackColor)
             }
         }
+        .frame(width: 30)
     }
 }
 

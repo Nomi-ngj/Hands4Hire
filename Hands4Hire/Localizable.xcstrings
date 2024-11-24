@@ -888,6 +888,35 @@
     "Book Now" : {
 
     },
+    "Booking" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "حجز"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Booking"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Reserva"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Réservation"
+          }
+        }
+      }
+    },
     "Cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1177,6 +1206,9 @@
           }
         }
       }
+    },
+    "Confirm Booking" : {
+
     },
     "Confirm New Password" : {
       "extractionState" : "manual",
@@ -1496,6 +1528,9 @@
           }
         }
       }
+    },
+    "Done" : {
+
     },
     "Electrician" : {
       "extractionState" : "manual",
@@ -3422,6 +3457,9 @@
         }
       }
     },
+    "Select Date" : {
+
+    },
     "Select Language" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3450,6 +3488,9 @@
           }
         }
       }
+    },
+    "Select Time" : {
+
     },
     "Service Providers" : {
       "extractionState" : "manual",
