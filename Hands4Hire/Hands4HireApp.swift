@@ -45,14 +45,17 @@ struct Hands4HireApp: App {
                         .environmentObject(appManager)
                 } else {
                     NavigationStack(path: $router.navPath) {
-                        if appManager.isUserLoggedIn {
-                            mainTabBarView
-                        }else {
+                        
+                        switch router.root {
+                        case .authentication:
                             LoginView()
                                 .navigationDestination(for: AuthFlow.self) { destination in
-                                    destination.view
+                                    router.destination(for: destination)
                                 }
-                        }       
+                        case .dashboard:
+                            mainTabBarView
+                            
+                        }
                     }
                     .environmentObject(appManager)
                     .environmentObject(router)
@@ -60,8 +63,7 @@ struct Hands4HireApp: App {
             }
             .onAppear{
                 _ = LocalizationManager.shared
-                appManager.isUserLoggedIn = Theme.sessionManager.isUserLoggedIn
-                //                 FirestoreSeeder.init().seedData()
+                router.root = Theme.sessionManager.isUserLoggedIn ? .dashboard:.authentication
             }
         }
     }
@@ -71,7 +73,7 @@ struct Hands4HireApp: App {
             TabBarController.TabItem(viewType: viewType)
         })
         .navigationDestination(for: ServicesFlow.self) { destination in
-            destination.view
+            router.destination(for: destination)
         }
         .navigationDestination(for: MyAccountFlow.self) { destination in
             destination.view

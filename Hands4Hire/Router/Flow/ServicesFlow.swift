@@ -6,34 +6,13 @@
 //
 
 import Foundation
-import SwiftUI
 
 enum ServicesFlow: Hashable, Codable {
     case service(serviceItem: ServiceItem)
     case services(title: String, serviceItems: [ServiceItem])
     case serviceProvider(serviceProviderItem: ServiceProvider)
     case reviews(serviceReviews: [Review])
-
     
-    @ViewBuilder
-    var view: some View {
-        switch self {
-        case .service(let item):
-            ServiceDetailView(item: item)
-                .navigationTitleWithBackButton(item.title)
-        case .services(let title, let items):
-            ServiceVerticalSectionView(title: title, items: items)
-                .background(Color.gray.opacity(0.15))
-                .navigationTitleWithBackButton(title)
-            
-        case .serviceProvider(let serviceProviderItem):
-            ServiceProviderDetailView(provider: serviceProviderItem)
-                .navigationTitleWithBackButton(serviceProviderItem.name)
-            
-        case .reviews(let serviceReviews):
-            ReviewListView(reviews: serviceReviews)
-        }
-    }
     enum CodingKeys: String, CodingKey {
         case type, serviceItem, title, serviceItems, serviceProviderItem,serviceReviews
     }

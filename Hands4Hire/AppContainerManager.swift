@@ -18,12 +18,12 @@ class AppContainerManager: ObservableObject {
     }
     @ObservedObject var theme = Theme()
     @ObservedObject var router = Router()
-    @Published var isUserLoggedIn: Bool = false // This allows modifying the state in the parent view
+    //@Published var isUserLoggedIn: Bool = false // This allows modifying the state in the parent view
     @Published var isLoading: Bool = false
     
     init(isDarkMode: Bool, isUserLoggedIn: Bool) {
         self.isDarkMode = isDarkMode
-        self.isUserLoggedIn = isUserLoggedIn
+       // self.isUserLoggedIn = isUserLoggedIn
         theme.setTheme(isDarkMode ? .darkMode:.default)
     }
     

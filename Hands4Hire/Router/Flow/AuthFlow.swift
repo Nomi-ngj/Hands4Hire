@@ -13,16 +13,4 @@ enum AuthFlow: Hashable, Codable {
     case createAccount
     case forgotPassword
     
-    @ViewBuilder
-    var view: some View {
-        switch self {
-        case .login:
-            LoginView()
-        case .createAccount:
-            SignUpView(viewModel: .init())
-        case .forgotPassword:
-            UnderConstructionView()
-                .navigationTitleWithBackButton(Theme.localized.forgotPasswordTitle.localized())
-        }
-    }
 }

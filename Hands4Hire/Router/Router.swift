@@ -11,6 +11,9 @@ final class Router: ObservableObject {
     @Published var navPath = NavigationPath()
     private var destinations: [AnyHashable] = []
 
+    @Published var stackServicesFlow:[ServicesFlow] = []
+    @Published var root:RootFlow = .authentication
+    
     func navigate(to destination: AuthFlow) {
         destinations.append(destination)
         navPath.append(destination)

@@ -131,7 +131,7 @@ struct LoginView: View {
     
     func pushTabbar(){
         router.navigateToRoot()
-        appManager.isUserLoggedIn = true
+        router.root = .dashboard
     }
     
     @ViewBuilder

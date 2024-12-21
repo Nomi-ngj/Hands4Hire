@@ -21,6 +21,9 @@
 		8C54ED332CE27707000CA68F /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED322CE27707000CA68F /* CustomAlertView.swift */; };
 		8C54ED352CE27C7F000CA68F /* AlertParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED342CE27C7F000CA68F /* AlertParams.swift */; };
 		8C54ED3D2CE3EB1A000CA68F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54ED3C2CE3EB1A000CA68F /* ToastView.swift */; };
+		8C7A3E402CFC49E60047A17C /* Router+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A3E3F2CFC49E60047A17C /* Router+Auth.swift */; };
+		8C7A3E422CFC4F9E0047A17C /* Router+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A3E412CFC4F9E0047A17C /* Router+Services.swift */; };
+		8C7A3E462CFC521B0047A17C /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A3E452CFC521B0047A17C /* RootFlow.swift */; };
 		8C7BC9722CBEFDA000B951AF /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9712CBEFDA000B951AF /* DashboardView.swift */; };
 		8C7BC9742CBF0C0100B951AF /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9732CBF0C0100B951AF /* HomeSection.swift */; };
 		8C7BC9762CBF0C2900B951AF /* ServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7BC9752CBF0C2900B951AF /* ServiceItem.swift */; };
@@ -136,6 +139,9 @@
 		8C54ED322CE27707000CA68F /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		8C54ED342CE27C7F000CA68F /* AlertParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertParams.swift; sourceTree = "<group>"; };
 		8C54ED3C2CE3EB1A000CA68F /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		8C7A3E3F2CFC49E60047A17C /* Router+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Auth.swift"; sourceTree = "<group>"; };
+		8C7A3E412CFC4F9E0047A17C /* Router+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Services.swift"; sourceTree = "<group>"; };
+		8C7A3E452CFC521B0047A17C /* RootFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
 		8C7BC9712CBEFDA000B951AF /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		8C7BC9732CBF0C0100B951AF /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		8C7BC9752CBF0C2900B951AF /* ServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItem.swift; sourceTree = "<group>"; };
@@ -274,6 +280,15 @@
 			path = Addresses;
 			sourceTree = "<group>";
 		};
+		8C7A3E432CFC51F10047A17C /* Router Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C7A3E412CFC4F9E0047A17C /* Router+Services.swift */,
+				8C7A3E3F2CFC49E60047A17C /* Router+Auth.swift */,
+			);
+			path = "Router Extensions";
+			sourceTree = "<group>";
+		};
 		8C7BC9702CBEFD7800B951AF /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,8 +371,10 @@
 		8C7BC9D42CD293F600B951AF /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				8C7A3E432CFC51F10047A17C /* Router Extensions */,
 				8C7BC9DB2CD2944400B951AF /* Flow */,
 				8C7BC9D22CCE3EAE00B951AF /* Router.swift */,
+				8C7A3E452CFC521B0047A17C /* RootFlow.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -798,6 +815,7 @@
 				8CB727802C934F3C00E107EF /* UsersListView.swift in Sources */,
 				8C54ED1A2CE0C5B2000CA68F /* BookingView.swift in Sources */,
 				8CB727502C93480D00E107EF /* AppColor.swift in Sources */,
+				8C7A3E422CFC4F9E0047A17C /* Router+Services.swift in Sources */,
 				8CB727562C93480D00E107EF /* BorderedButtonStyle.swift in Sources */,
 				8CB727852C93536100E107EF /* Review.swift in Sources */,
 				8C7BC9C52CCC108800B951AF /* LocalizationManager.swift in Sources */,
@@ -805,6 +823,7 @@
 				8C54ED1E2CE0D40C000CA68F /* DateSelectionView.swift in Sources */,
 				8CB726C72C93311A00E107EF /* FirestoreManager.swift in Sources */,
 				8CB727672C93480D00E107EF /* ChangePasswordView.swift in Sources */,
+				8C7A3E462CFC521B0047A17C /* RootFlow.swift in Sources */,
 				8C7BC9C72CCC10AE00B951AF /* AppLanguage.swift in Sources */,
 				8C7BC97E2CBF0C6C00B951AF /* ServiceItemView.swift in Sources */,
 				8C7BC9C32CCC100C00B951AF /* LanguageSelectionView.swift in Sources */,
@@ -814,6 +833,7 @@
 				8CB726D02C9346E500E107EF /* AppContainerManager.swift in Sources */,
 				8C7BC9D32CCE3EAE00B951AF /* Router.swift in Sources */,
 				8C7BC9BF2CC83A4300B951AF /* TextFieldModifier.swift in Sources */,
+				8C7A3E402CFC49E60047A17C /* Router+Auth.swift in Sources */,
 				8CB727592C93480D00E107EF /* SignUpView.swift in Sources */,
 				8C54ED2A2CE0F5D1000CA68F /* ServicesProviderSelectionSheet.swift in Sources */,
 				8C7BC9B42CC4389100B951AF /* ServiceProviderServiceItemView.swift in Sources */,

@@ -41,7 +41,7 @@ struct SignUpView: View {
             Button(action: {
                 viewModel.callBackRegisterSuccessfully = {
                     router.navigateToRoot()
-                    appManager.isUserLoggedIn = true
+                    router.root = .dashboard
                 }
                 viewModel.registerUser()
             }) {

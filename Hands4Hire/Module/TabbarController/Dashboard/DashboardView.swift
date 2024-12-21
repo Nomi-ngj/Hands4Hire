@@ -33,6 +33,7 @@ struct DashboardView: View {
                 }
             }
         }
+//        .redacted(reason: .placeholder)
         .background(Color.gray.opacity(0.15))
     }
 }

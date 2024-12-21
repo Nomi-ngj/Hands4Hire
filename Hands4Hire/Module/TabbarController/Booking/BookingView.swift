@@ -8,9 +8,6 @@
 import SwiftUI
 import MapKit
 
-
-
-
 struct BookingView: View {
     @ObservedObject var viewModel:BookingViewModel
     @EnvironmentObject var appManager: AppContainerManager
@@ -65,6 +62,7 @@ struct BookingView: View {
                 confirmAction: {
                     viewModel.resetView()
                     viewModel.isBookingConfirmed = false
+                    
                 }
             ),
             shouldShow: $viewModel.isBookingConfirmed
